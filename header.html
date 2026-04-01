@@ -1,0 +1,179 @@
+<!-- ============================================================
+     HEADER PARTIAL — include via JS fetch or copy into each page
+     ============================================================ -->
+<div id="page-loader">
+  <div class="loader-logo">
+    <svg class="oaw-logo-svg" direction="ltr" width="120" height="50" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+      <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900"
+        fill="var(--gold)">OAW</text>
+      <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5"
+        stroke-linecap="square" />
+    </svg>
+  </div>
+  <div class="loader-bar">
+    <div class="loader-bar-fill"></div>
+  </div>
+</div>
+
+<div id="cursor-glow"></div>
+
+<header id="site-header">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="home1.html" class="site-logo">
+        <svg class="oaw-logo-svg" direction="ltr" width="90" height="40" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+          <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900"
+            fill="var(--gold)">OAW</text>
+          <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5"
+            stroke-linecap="square" />
+        </svg>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main navigation">
+
+        <!-- Home -->
+        <div class="nav-item">
+          <a href="home1.html" class="nav-link" data-page="home1.html">
+            Home <span class="chevron">▾</span>
+          </a>
+          <div class="dropdown">
+            <a href="home1.html" class="dropdown-link" data-page="home1.html">
+              <span class="dd-icon">🏠</span>
+              <span class="dd-text">
+                <span class="dd-name">Home 1</span>
+                <span class="dd-desc">Main landing page</span>
+              </span>
+            </a>
+            <a href="home2.html" class="dropdown-link" data-page="home2.html">
+              <span class="dd-icon">🏡</span>
+              <span class="dd-text">
+                <span class="dd-name">Home 2</span>
+                <span class="dd-desc">Alternative landing</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" data-page="about.html">About</a>
+        </div>
+
+        <!-- Services -->
+        <div class="nav-item">
+          <a href="services.html" class="nav-link" data-page="services.html">Services</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link" data-page="contact.html">Contact</a>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            Dashboard <span class="chevron">▾</span>
+          </a>
+          <div class="dropdown">
+            <a href="user-dashboard.html" class="dropdown-link" data-page="user-dashboard.html">
+              <span class="dd-icon"></span>
+              <span class="dd-text">
+                <span class="dd-name">User Dashboard</span>
+                <span class="dd-desc">Manage your bids</span>
+              </span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="admin-dashboard.html" class="dropdown-link" data-page="admin-dashboard.html">
+              <span class="dd-icon"></span>
+              <span class="dd-text">
+                <span class="dd-name">Admin Dashboard</span>
+                <span class="dd-desc">Platform management</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+      </nav>
+
+      <!-- Header Right -->
+      <div class="header-right">
+
+        <!-- Globe / Direction -->
+        <div class="globe-wrapper">
+          <button class="globe-btn" id="globe-btn" aria-label="Language & Direction"><svg width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+              <path d="M2 12h20"></path>
+            </svg></button>
+          <div class="globe-menu" id="globe-menu">
+            <button class="ltr-btn active">
+              <span class="dir-icon">⬅➡</span> LTR
+            </button>
+            <button class="rtl-btn">
+              <span class="dir-icon">➡⬅</span> RTL
+            </button>
+          </div>
+        </div>
+
+        <a href="login.html" class="header-cta btn">LOGIN</a>
+
+        <!-- Mobile toggle -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav id="mobile-nav" aria-label="Mobile navigation">
+
+  <div class="mobile-nav-item">
+    <a href="home1.html" class="mobile-nav-link" data-page="home1.html">
+      Home
+      <button class="mobile-dd-toggle" aria-label="Toggle home dropdown">▾</button>
+    </a>
+    <div class="mobile-dropdown">
+      <a href="home1.html" class="mobile-dd-link" data-page="home1.html"><span class="dd-icon">🏠</span> Home 1</a>
+      <a href="home2.html" class="mobile-dd-link" data-page="home2.html"><span class="dd-icon">🏡</span> Home 2</a>
+    </div>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a href="about.html" class="mobile-nav-link" data-page="about.html">About</a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="services.html" class="mobile-nav-link" data-page="services.html">Services</a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="contact.html" class="mobile-nav-link" data-page="contact.html">Contact</a>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a href="#" class="mobile-nav-link">
+      Dashboard
+      <button class="mobile-dd-toggle" aria-label="Toggle dashboard dropdown">▾</button>
+    </a>
+    <div class="mobile-dropdown">
+      <a href="user-dashboard.html" class="mobile-dd-link" data-page="user-dashboard.html"><span
+          class="dd-icon">👤</span> User Dashboard</a>
+      <a href="admin-dashboard.html" class="mobile-dd-link" data-page="admin-dashboard.html"><span
+          class="dd-icon">🛡️</span> Admin Dashboard</a>
+    </div>
+  </div>
+
+  <div class="mobile-nav-bottom">
+    <a href="login.html" class="btn btn-primary" style="justify-content:center;">LOGIN</a>
+  </div>
+
+</nav>
+
+<button id="back-to-top" aria-label="Back to top">▲</button>

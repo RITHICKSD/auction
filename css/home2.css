@@ -1,0 +1,127 @@
+/* ============================================================
+   HOME2.CSS — Alternative Flagship Landing (20 Sections)
+   ============================================================ */
+
+/* ── S1: Hero Luxe (Modern Vertical) ── */
+.h2-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding-top: 60px; /* Further reduced Offset for fixed header */
+}
+.h2-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,0,0.12) 0%, transparent 60%),
+              url('../images/hero_bg.png') center/cover;
+  opacity: 0.3;
+  transform: scale(1.1);
+  filter: grayscale(0.5);
+}
+.h2-hero-content { position: relative; z-index: 5; }
+
+/* ── Hero Split Layout ── */
+.hero-main-frame {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Reduced from 550px */
+  padding: 16px;
+}
+.float-card {
+  position: absolute;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+.fc-1 { top: 10%; right: -10%; min-width: 180px; }
+.fc-2 { bottom: 15%; left: -5%; min-width: 200px; }
+
+.float-card span { font-size: 9px; font-weight: 800; letter-spacing: 1px; }
+.float-card p { font-size: 11px; margin: 4px 0; color: var(--muted); }
+
+.mini-stat {
+  padding-left: 12px;
+  border-left: 2px solid var(--gold);
+}
+
+.line { width: 40px; height: 1px; background: var(--border); }
+
+/* ── Sections Spacing ── */
+.h2-section { padding: 40px 0; position: relative; overflow: hidden; }
+
+/* ── Grid Variations ── */
+.h2-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+.h2-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.h2-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+/* ── S5: The Vault ── */
+.vault-card {
+  background: var(--navy-mid);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  transition: 0.4s var(--ease);
+  position: relative;
+}
+.vault-card:hover { border-color: var(--gold); transform: translateY(-10px); background: #131A2E; }
+.vault-icon { font-size: 32px; margin-bottom: 24px; display: block; }
+
+/* ── Animations Reference ── */
+[data-anim="blur-in"] { filter: blur(20px); opacity: 0; transition: 1s ease; }
+[data-anim="blur-in"].animated { filter: blur(0); opacity: 1; }
+
+[data-anim="slide-up"] { transform: translateY(60px); opacity: 0; transition: 0.8s var(--ease); }
+[data-anim="slide-up"].animated { transform: translateY(0); opacity: 1; }
+
+/* ── Components ── */
+.luxe-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); font-weight: 800; margin-bottom: 16px; display: block; }
+.luxe-num { font-family: var(--font-serif); font-size: 80px; font-weight: 900; color: rgba(255,255,0,0.05); position: absolute; top: -20px; right: 20px; }
+
+/* ── S11: Partner Ticker ── */
+.partner-row { display: flex; gap: 80px; align-items: center; white-space: nowrap; animation: ticker 40s infinite linear; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ── S14: Mini Accordion ── */
+.mini-faq { border-bottom: 1px solid var(--border); padding: 24px 0; }
+.mini-faq-q { display: flex; justify-content: space-between; font-weight: 700; color: var(--gold); cursor: pointer; }
+.mini-faq-q span:last-child { transition: transform 0.3s ease; }
+.mini-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease), padding-top 0.4s var(--ease); font-size: 14px; color: var(--muted); }
+.mini-faq.active .mini-faq-a { max-height: 200px; padding-top: 16px; }
+.mini-faq.active .mini-faq-q span:last-child { transform: rotate(180deg); }
+/* RTL */
+body[dir="rtl"] .h2-hero-content { text-align: right; }
+body[dir="rtl"] .h2-grid-2 { direction: rtl; }
+body[dir="rtl"] .vault-card { text-align: right; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .h2-grid-2, .h2-grid-3, .h2-grid-4 { grid-template-columns: 1fr; }
+  .h2-hero { height: auto; padding: 140px 0; }
+  .h2-section { padding: 80px 0; }
+}
+@media (max-width: 768px) {
+  .h2-hero { padding: 120px 0 60px; }
+  .h2-section { padding: 60px 0; }
+  .h2-grid-2 { gap: 40px; }
+  .h2-grid-3 { gap: 24px; }
+  .vault-card { padding: 28px; }
+}
+@media (max-width: 480px) {
+  .h2-section { padding: 50px 0; }
+  .vault-card { padding: 24px; }
+}
+
+@keyframes pulseRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.1); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}

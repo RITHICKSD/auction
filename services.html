@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concierge Services — OAW | The Standard of Excellence</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+<body>
+
+<!-- ░░░ PAGE LOADER ░░░ -->
+<div id="page-loader">
+  <div class="loader-logo">
+    <svg class="oaw-logo-svg" direction="ltr" width="120" height="50" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+      <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900" fill="var(--gold)">OAW</text>
+      <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5" stroke-linecap="square" />
+    </svg>
+  </div>
+</div>
+
+<div id="cursor-glow"></div>
+
+<!-- ░░░ SITE HEADER ░░░ -->
+<header id="site-header">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="home1.html" class="site-logo">
+        <svg class="oaw-logo-svg" direction="ltr" width="90" height="40" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+          <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900" fill="var(--gold)">OAW</text>
+          <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5" stroke-linecap="square" />
+        </svg>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main navigation">
+
+        <!-- Home -->
+        <div class="nav-item">
+          <a href="home1.html" class="nav-link" data-page="home1.html">
+            Home <span class="chevron">▾</span>
+          </a>
+          <div class="dropdown">
+            <a href="home1.html" class="dropdown-link" data-page="home1.html">Home 1</a>
+            <a href="home2.html" class="dropdown-link" data-page="home2.html">Home 2</a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" data-page="about.html">About</a>
+        </div>
+
+        <!-- Services -->
+        <div class="nav-item">
+          <a href="services.html" class="nav-link active" data-page="services.html">Services</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link" data-page="contact.html">Contact</a>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            Dashboard <span class="chevron">▾</span>
+          </a>
+          <div class="dropdown">
+            <a href="user-dashboard.html" class="dropdown-link" data-page="user-dashboard.html">User Dashboard</a>
+            <div class="dropdown-divider"></div>
+            <a href="admin-dashboard.html" class="dropdown-link" data-page="admin-dashboard.html">Admin Dashboard</a>
+          </div>
+        </div>
+
+      </nav>
+
+      <div class="header-right">
+        <!-- Live Status integrated in Header -->
+        <div class="live-status-header">
+          <span class="live-dot"></span>
+          <span class="live-text">Live Now</span>
+        </div>
+
+        <!-- Globe — click to toggle RTL/LTR -->
+        <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR" title="Switch to RTL"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg></button>
+
+        <a href="login.html" class="header-cta">LOGIN</a>
+
+        <!-- Mobile toggle -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ░░░ MOBILE NAV ░░░ -->
+<nav id="mobile-nav" aria-label="Mobile navigation">
+
+  <div class="mobile-nav-item">
+    <a href="#" class="mobile-nav-link" data-page="home1.html">
+      Home
+      <button class="mobile-dd-toggle" aria-label="Toggle home dropdown">▾</button>
+    </a>
+    <div class="mobile-dropdown">
+      <a href="home1.html" class="mobile-dd-link" data-page="home1.html">Home 1</a>
+      <a href="home2.html" class="mobile-dd-link" data-page="home2.html">Home 2</a>
+    </div>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a href="about.html" class="mobile-nav-link" data-page="about.html">About</a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="services.html" class="mobile-nav-link active" data-page="services.html">Services</a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="contact.html" class="mobile-nav-link" data-page="contact.html">Contact</a>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a href="#" class="mobile-nav-link">
+      Dashboard
+      <button class="mobile-dd-toggle" aria-label="Toggle dashboard dropdown">▾</button>
+    </a>
+    <div class="mobile-dropdown">
+      <a href="user-dashboard.html" class="mobile-dd-link" data-page="user-dashboard.html">User Dashboard</a>
+      <a href="admin-dashboard.html" class="mobile-dd-link" data-page="admin-dashboard.html">Admin Dashboard</a>
+    </div>
+  </div>
+
+  <div class="mobile-nav-bottom">
+    <a href="login.html" class="btn btn-primary" style="justify-content:center;"><svg class="icon icon-margin-r">
+        <use xlink:href="#icon-bolt"></use>
+      </svg> LOGIN</a>
+  </div>
+
+</nav>
+
+<button id="back-to-top">▲</button>
+<main>
+  <!-- S1 — UNIQUE HERO: THE ETHERIAL CENTER -->
+  <section id="s-hero" class="hero-center">
+    <div class="hero-center-bg"></div>
+    <div class="container relative z-1">
+      <div class="text-center" data-anim="scale">
+        <div class="section-tag">Concierge Distinction</div>
+        <h1 class="hero-title">Experience the Art <br> of <span class="gold">Exceptional</span> Service</h1>
+        <p class="hero-sub mx-auto">From global brokerage to scientific authentication, OAW provides a comprehensive suite of services for the discerning collector.</p>
+        <div class="hero-btns-row">
+           <a href="#s-consignment" class="btn btn-primary">Consign Now</a>
+           <a href="#s-advisory" class="btn btn-outline">Meet an Advisor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S2 — SERVICE QUICK NAV -->
+  <section class="quick-nav">
+     <div class="container">
+        <div class="nav-links-row">
+           <a href="#s3">Auctions</a>
+           <a href="#s4">Private Sales</a>
+           <a href="#s6">Appraisals</a>
+           <a href="#s7">Logistics</a>
+           <a href="#s10">Advisory</a>
+        </div>
+     </div>
+  </section>
+
+  <!-- S3 — PUBLIC AUCTIONS -->
+  <section id="s3" class="section">
+    <div class="container">
+       <div class="service-detail-grid">
+          <div class="sd-text" data-anim="fade-right">
+             <h2 class="section-title">Public <span class="gold">Global</span> Auctions</h2>
+             <p class="section-subtitle">Real-time access to the world's most anticipated sales across London, New York, and Hong Kong simultanously.</p>
+             <ul class="check-list">
+                <li>• Concurrent Multi-City Bidding</li>
+                <li>• Real-time Specialist Commentary</li>
+                <li>• Live Virtual Gallery Tours</li>
+             </ul>
+          </div>
+          <div class="sd-visual" data-anim="fade-left" style="background: url('images/o6.webp') center/cover; border: none;">
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S4 — PRIVATE SALES -->
+  <section id="s4" class="section bg-mid">
+    <div class="container">
+      <div class="service-detail-grid alt">
+          <div class="sd-visual" data-anim="fade-right" style="background: url('images/a9.jpg') center/cover; border: none;">
+          </div>
+          <div class="sd-text" data-anim="fade-left">
+             <h2 class="section-title">Discreet <span class="gold">Private</span> Sales</h2>
+             <p class="section-subtitle">For transactions requiring ultimate discretion and pace. Our brokerage team manages tailored acquisitions for private offices and museum curators.</p>
+             <p style="margin-top:16px; font-size:14px; color:var(--muted);">Our private sale portal provides absolute anonymity, connecting serious collectors with blue-chip assets that never reach the public rostrum.</p>
+             <a href="#" class="btn btn-outline" style="margin-top:24px;">Enquire Privately</a>
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S5 — PROFESSIONAL CONSIGNMENT -->
+  <section id="s-consignment" class="section">
+    <div class="container">
+       <div class="text-center" data-anim="fade-up">
+          <h2 class="section-title">The <span class="gold">Consignment</span> Journey</h2>
+       </div>
+       <div class="step-grid-lux">
+          <div class="lux-step"><span>01</span><h4>Valuation</h4></div>
+          <div class="lux-step"><span>02</span><h4>Curation</h4></div>
+          <div class="lux-step"><span>03</span><h4>Imaging</h4></div>
+          <div class="lux-step"><span>04</span><h4>Sale</h4></div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S6 — VALUATIONS & APPRAISALS -->
+  <section id="s6" class="section bg-card">
+    <div class="container text-center">
+       <h2 class="section-title">Bespoke <span class="gold">Valuations</span></h2>
+       <div class="appraisal-grid">
+          <div class="app-card"><h3>Online</h3><p>Upload details for a 24h preliminary estimate.</p></div>
+          <div class="app-card"><h3>Expert Desk</h3><p>Video consultations with senior specialists.</p></div>
+          <div class="app-card"><h3>Home Visit</h3><p>In-person appraisal for large collections.</p></div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S7 — GLOBAL LOGISTICS -->
+  <section id="s7" class="section">
+    <div class="container">
+       <div class="logistics-box" data-anim="scale" style="margin-bottom:40px;">
+          <h2 class="section-title">Insured <span class="gold">Global</span> Logistics</h2>
+          <p>White-glove delivery to 140+ countries with full transit insurance and climate-controlled couriers.</p>
+       </div>
+       <div class="appraisal-grid">
+          <div class="app-card">
+             <h3>Climate Control</h3>
+             <p>Constant temperature and humidity monitoring for sensitive fine art and wine.</p>
+          </div>
+          <div class="app-card" data-delay="0.1">
+             <h3>Custom Crate</h3>
+             <p>Museum-grade timber crating built specifically for each object's dimensions.</p>
+          </div>
+          <div class="app-card" data-delay="0.2">
+             <h3>Tier-1 Insurance</h3>
+             <p>Full replacement value coverage provided by Lloyd's of London syndicates.</p>
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S8 — EXPERT AUTHENTICATION & FINANCIALS -->
+  <section class="section bg-mid">
+    <div class="container">
+       <div class="text-center" style="margin-bottom:32px;">
+          <h2 class="section-title">Scientific <span class="gold">Verification</span></h2>
+          <p class="section-subtitle">Every object is catalogued by specialists and verified through archival research and forensic analysis.</p>
+       </div>
+       <div class="fin-grid">
+          <div class="fin-item"><h4>Escrow Protection</h4><p>Your funds are secured until of possession confirmed.</p></div>
+          <div class="fin-item"><h4>Multi-Currency Settlement</h4><p>Settle in USD, GBP, EUR, or crypto-assets.</p></div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S10 — ART ADVISORY -->
+  <section id="s10" class="section bg-card">
+    <div class="container">
+       <div class="advisory-grid" data-anim="fade-up">
+          <div class="advisory-text">
+             <h2 class="section-title">Investment <span class="gold">Advisory</span></h2>
+             <p class="section-subtitle">OAW Capital provides data-driven research for high-net-worth individuals building multi-generational art portfolios.</p>
+             
+             <div class="advisory-features" style="margin-top:32px;">
+                <div class="adv-feature-item">
+                   <span class="adv-bullet">⚡</span>
+                   <div>
+                      <h4 class="gold">Portfolio Diversification</h4>
+                      <p style="font-size:14px; opacity:0.8;">Treating blue-chip art as a stable, non-correlated asset class for wealth preservation.</p>
+                   </div>
+                </div>
+                <div class="adv-feature-item">
+                   <span class="adv-bullet">⚡</span>
+                   <div>
+                      <h4 class="gold">Market Analytics</h4>
+                      <p style="font-size:14px; opacity:0.8;">Quarterly reports on auction trends, liquidity scores, and artist price indices.</p>
+                   </div>
+                </div>
+                <div class="adv-feature-item">
+                   <span class="adv-bullet">⚡</span>
+                   <div>
+                      <h4 class="gold">Tax & Trust Liaison</h4>
+                      <p style="font-size:14px; opacity:0.8;">Coordinating with family offices on tax-efficient acquisitions and charitable donations.</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="advisory-visual">
+             <div class="glass-visual-box">
+                <img src="images/a12.jpg" alt="Advisory Visual" style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
+                <div class="glass-overlay-label">Institutional Precision</div>
+             </div>
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S11 — MUSEUM SERVICES -->
+  <section class="section">
+    <div class="container text-center">
+       <h2 class="section-title">For <span class="gold">Institutions</span></h2>
+       <p class="section-subtitle">Restoration, long-term storage, and deaccessioning services for national museums.</p>
+       <div class="appraisal-grid" style="margin-top:40px;">
+          <div class="app-card">
+             <h4>Restoration</h4>
+             <p>Access to world-class labs for canvas repair and structural stabilization.</p>
+          </div>
+          <div class="app-card">
+             <h4>Deaccessioning</h4>
+             <p>Strategic counseling on refining institutional collections through public sale.</p>
+          </div>
+          <div class="app-card">
+             <h4>Archiving</h4>
+             <p>High-resolution 3D scanning and digital cataloguing for public access.</p>
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S12 — CORPORATE COLLECTIONS -->
+  <section class="section bg-mid">
+    <div class="container">
+       <h2 class="section-title text-center">Corporate <span class="gold">Curatorship</span></h2>
+       <div class="appraisal-grid" style="margin-top:40px;">
+          <div class="app-card">
+             <h4>Workspace Curation</h4>
+             <p>Designing inspiring office environments through leased or owned art assets.</p>
+          </div>
+          <div class="app-card">
+             <h4>Asset Investment</h4>
+             <p>Treating fine art as a balance-sheet asset with historical growth potential.</p>
+          </div>
+          <div class="app-card">
+             <h4>Executive Perks</h4>
+             <p>VIP preview access for senior leadership and corporate entertaining at evening sales.</p>
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S13 — OAW MOBILE APP -->
+  <section class="section">
+    <div class="container">
+       <div class="app-promo-box" data-anim="scale">
+          <h2 class="section-title">The <span class="gold">OAW App</span></h2>
+          <p>Real-time bidding in the palm of your hand. Available for iOS and Android.</p>
+       </div>
+    </div>
+  </section>
+
+  <!-- S14 — MEMBERSHIP PERKS -->
+  <section class="section bg-card">
+    <div class="container">
+       <h2 class="section-title text-center">Collective <span class="gold">Benefits</span></h2>
+       <div class="tiers-grid">
+          <div class="tier-card"><h4>Gold</h4><p>Free catalogue and preview access.</p></div>
+          <div class="tier-card"><h4>Platinum</h4><p>Zero buyer premium on first 2 lots/year.</p></div>
+          <div class="tier-card"><h4>Legacy</h4><p>Invite-only evening sales and private concierge.</p></div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S15 — CONSIGNMENT CTA -->
+  <section class="section" style="background:var(--gold);">
+    <div class="container text-center">
+       <h2 class="section-title" style="color:var(--navy)">Ready to <span class="navy">Consign?</span></h2>
+       <a href="contact.html" class="btn btn-navy" style="margin-top:24px;">Start Your Valuation</a>
+    </div>
+  </section>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer style="background:#000000;border-top:1px solid var(--border);padding:60px 0 30px;">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="home1.html" class="site-logo" style="margin-bottom:20px;display:inline-flex;">
+        <svg class="oaw-logo-svg" direction="ltr" width="90" height="40" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+          <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900" fill="var(--gold)">OAW</text>
+          <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5" stroke-linecap="square" />
+        </svg>
+        </a>
+        <p style="color:var(--muted);font-size:14px;line-height:1.8;max-width:300px;margin-top:16px;">The world's most trusted premium online auction platform. Connecting collectors with extraordinary objects since 1996.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Navigation</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="home1.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Home</a>
+          <a href="about.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">About</a>
+          <a href="services.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Services</a>
+          <a href="contact.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Dashboards</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="user-dashboard.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">User Dashboard</a>
+          <a href="admin-dashboard.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Admin Dashboard</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Connect</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="#" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">𝕏</a>
+          <a href="#" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">in</a>
+          <a href="#" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">📷</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <p style="color:var(--muted);font-size:13px;">© 2026 Online Auction World. All rights reserved.</p>
+      <p style="color:var(--muted);font-size:13px;">Designed with ♥ for collectors worldwide</p>
+    </div>
+  </div>
+</footer>
+<script src="js/header.js"></script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('animated');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

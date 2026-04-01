@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>User Dashboard — OAW Collective</title>
+<link rel="stylesheet" href="css/global.css"/>
+<link rel="stylesheet" href="css/dashboard.css"/>
+<link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+<body class="dashboard-body">
+
+<!-- SVG Sprite -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="ic-overview" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+  <symbol id="ic-bids" viewBox="0 0 24 24"><path d="M14.5 2.5 19 7l-9.38 9.38a2 2 0 0 1-1.41.59H5v-3.17a2 2 0 0 1 .59-1.41L14.5 2.5ZM5 17l2-2M20 21H4"/></symbol>
+  <symbol id="ic-watchlist" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></symbol>
+  <symbol id="ic-collection" viewBox="0 0 24 24"><path d="M4 4h6v6H4V4ZM14 4h6v6h-6V4ZM4 14h6v6H4v-6ZM14 14h6v6h-6v-6Z"/></symbol>
+  <symbol id="ic-invoices" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+  <symbol id="ic-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="ic-signout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="ic-trending" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+  <symbol id="ic-dollar" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17h4v-2.34M12 4h4v10.66c0 2.21-1.79 4.34-4 4.34s-4-2.13-4-4.34V4h4Z"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="ic-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 17.76 4H6.24a2 2 0 0 0-1.79 1.11Z"/></symbol>
+  <symbol id="ic-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+  <symbol id="ic-map" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="ic-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="ic-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="ic-tag" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></symbol>
+  <symbol id="ic-bar" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+  <symbol id="ic-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="ic-edit" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5Z"/></symbol>
+</svg>
+
+<!-- Mobile Toggle -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Menu">☰</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Sidebar -->
+<aside class="dash-sidebar" id="dashSidebar">
+  <div class="sidebar-header">
+    <a href="home1.html" class="site-logo">
+      <svg class="oaw-logo-svg" direction="ltr" width="80" height="36" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+        <text x="6" y="66" font-family="var(--font-serif),serif" font-size="62" font-weight="900" fill="var(--gold)">OAW</text>
+        <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5" stroke-linecap="square"/>
+      </svg>
+    </a>
+  </div>
+  <nav class="sidebar-nav" id="sidebarNav">
+    <button class="nav-item active" data-panel="overview">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-overview"/></svg>Overview
+    </button>
+    <button class="nav-item" data-panel="bids">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-bids"/></svg>My Bids <span class="nav-badge">3</span>
+    </button>
+    <button class="nav-item" data-panel="watchlist">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-watchlist"/></svg>Watchlist
+    </button>
+    <button class="nav-item" data-panel="collection">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-collection"/></svg>My Collection
+    </button>
+    <button class="nav-item" data-panel="invoices">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-invoices"/></svg>Invoices
+    </button>
+    <button class="nav-item" data-panel="trends">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-trending"/></svg>Market Trends
+    </button>
+    <button class="nav-item" data-panel="messages">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-inbox"/></svg>Messages <span class="nav-badge" style="background:#EF4444">5</span>
+    </button>
+    <button class="nav-item" data-panel="consign">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-tag"/></svg>Consignments
+    </button>
+    <div class="sidebar-divider"></div>
+    <button class="nav-item" data-panel="settings">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-settings"/></svg>Settings
+    </button>
+    <a href="home1.html" class="nav-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-signout"/></svg>Sign Out
+    </a>
+  </nav>
+  <button class="sidebar-globe-btn" id="globeBtn" title="Toggle RTL/LTR">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-globe"/></svg>
+  </button>
+</aside>
+
+<!-- Main -->
+<main class="dash-main">
+  <header class="dash-header">
+    <div class="dash-welcome">
+      <h2>Welcome back, <span class="gold">Julian</span></h2>
+      <p>Collector Status: <span style="color:var(--gold)">Connoisseur</span></p>
+    </div>
+    <div class="dash-actions">
+      <svg width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.6"><use xlink:href="#ic-bell"/></svg>
+      <div class="user-avatar">JD</div>
+    </div>
+  </header>
+
+  <div class="dash-content">
+
+    <!-- ░░ OVERVIEW ░░ -->
+    <div class="dash-panel active" id="panel-overview">
+      <div class="panel-title">Overview</div>
+      <div class="panel-subtitle">Your complete auction performance at a glance.</div>
+
+      <!-- 4 KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-bids"/></svg></div><span class="kpi-trend up">+2 ↑</span></div><div class="kpi-value">3</div><div class="kpi-label">Active Bids</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-trophy"/></svg></div><span class="kpi-trend up">+1 ↑</span></div><div class="kpi-value">12</div><div class="kpi-label">Lots Won</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-dollar"/></svg></div><span class="kpi-trend up">+8% ↑</span></div><div class="kpi-value">$142k</div><div class="kpi-label">Total Outlay</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-star"/></svg></div><span class="kpi-trend down">-3 ↓</span></div><div class="kpi-value">24</div><div class="kpi-label">Watchlist</div></div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="chart-grid" style="margin-bottom:24px">
+        <div class="chart-box">
+          <div class="chart-box-title">Bid Activity — Last 8 Months <span>Monthly</span></div>
+          <div class="bar-chart-wrap">
+            <div class="bar-chart-yaxis">
+              <span>12</span><span>9</span><span>6</span><span>3</span><span>0</span>
+            </div>
+            <div class="bar-chart-inner">
+              <div class="bar-chart-grid">
+                <div class="bar-chart-gridlines"><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="bar-chart-bars">
+                  <div class="bar-wrap"><div class="bar-val-label">7</div><div class="bar" style="height:58%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">4</div><div class="bar muted" style="height:33%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">8</div><div class="bar" style="height:67%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">11</div><div class="bar" style="height:92%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">5</div><div class="bar muted" style="height:42%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">8</div><div class="bar" style="height:67%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">10</div><div class="bar" style="height:83%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">12</div><div class="bar" style="height:100%"></div></div>
+                </div>
+              </div>
+              <div class="bar-xaxis">
+                <span class="bar-label">Aug</span><span class="bar-label">Sep</span><span class="bar-label">Oct</span><span class="bar-label">Nov</span><span class="bar-label">Dec</span><span class="bar-label">Jan</span><span class="bar-label">Feb</span><span class="bar-label">Mar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Portfolio Mix</div>
+          <div class="donut-wrap">
+            <svg class="donut-svg" width="100" height="100" viewBox="0 0 42 42">
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="#1a1d2e" stroke-width="6"/>
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="var(--gold)" stroke-width="6" stroke-dasharray="45 55" stroke-dashoffset="25"/>
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="rgba(255,255,0,0.4)" stroke-width="6" stroke-dasharray="25 75" stroke-dashoffset="-20"/>
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="rgba(255,255,0,0.2)" stroke-width="6" stroke-dasharray="20 80" stroke-dashoffset="-45"/>
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="rgba(255,255,0,0.1)" stroke-width="6" stroke-dasharray="10 90" stroke-dashoffset="-65"/>
+            </svg>
+            <div class="donut-legend">
+              <div class="legend-row"><div class="legend-dot" style="background:var(--gold)"></div>Watches<span class="legend-val">45%</span></div>
+              <div class="legend-row"><div class="legend-dot" style="background:rgba(255,255,0,0.4)"></div>Fine Art<span class="legend-val">25%</span></div>
+              <div class="legend-row"><div class="legend-dot" style="background:rgba(255,255,0,0.2)"></div>Jewellery<span class="legend-val">20%</span></div>
+              <div class="legend-row"><div class="legend-dot" style="background:rgba(255,255,0,0.1)"></div>Other<span class="legend-val">10%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Stat Info Cards -->
+      <div class="info-cards">
+        <div class="info-card"><div class="info-num">$18.4k</div><div class="info-sub">Highest Single Bid</div></div>
+        <div class="info-card"><div class="info-num">92%</div><div class="info-sub">Win Rate</div></div>
+        <div class="info-card"><div class="info-num">28</div><div class="info-sub">Auctions Entered</div></div>
+      </div>
+
+      <!-- Spending Trend + Activity -->
+      <div class="chart-grid-3">
+        <div class="chart-box" style="grid-column:span 2">
+          <div class="chart-box-title">Spending Trend <span>12 months</span></div>
+          <div class="line-chart-wrap">
+            <div class="line-chart-yaxis">
+              <span>$20k</span><span>$15k</span><span>$10k</span><span>$5k</span><span>0</span>
+            </div>
+            <div class="line-chart-inner">
+              <div class="line-chart-container">
+                <div class="line-chart-gridlines"><span></span><span></span><span></span><span></span><span></span></div>
+                <svg class="line-chart-svg" viewBox="0 0 300 120" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="lg-spend" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.3"/>
+                      <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,100 L25,85 L50,90 L75,60 L100,68 L125,45 L150,52 L175,30 L200,38 L225,15 L250,22 L275,8 L300,12" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M0,100 L25,85 L50,90 L75,60 L100,68 L125,45 L150,52 L175,30 L200,38 L225,15 L250,22 L275,8 L300,12 L300,120 L0,120Z" fill="url(#lg-spend)"/>
+                </svg>
+              </div>
+              <div class="line-chart-xaxis">
+                <span class="line-xaxis-label">Apr</span><span class="line-xaxis-label">Jun</span><span class="line-xaxis-label">Aug</span><span class="line-xaxis-label">Oct</span><span class="line-xaxis-label">Dec</span><span class="line-xaxis-label">Feb</span><span class="line-xaxis-label">Apr</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Recent Activity</div>
+          <div class="timeline">
+            <div class="tl-entry"><div class="tl-dot"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-check"/></svg></div><div class="tl-body"><h4>Won: Rolex GMT</h4><p>$18,400 final</p><div class="tl-time">2h ago</div></div></div>
+            <div class="tl-entry"><div class="tl-dot"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-bids"/></svg></div><div class="tl-body"><h4>Bid: Leica M3</h4><p>$4,200 placed</p><div class="tl-time">5h ago</div></div></div>
+            <div class="tl-entry"><div class="tl-dot"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-star"/></svg></div><div class="tl-body"><h4>Watchlisted</h4><p>Art Deco Brooch</p><div class="tl-time">1d ago</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ░░ MY BIDS ░░ -->
+    <div class="dash-panel" id="panel-bids">
+      <div class="panel-title">My Bids</div>
+      <div class="panel-subtitle">Track all active, won, and lost auction bids in real time.</div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-bids"/></svg></div><span class="kpi-trend up">Live</span></div><div class="kpi-value">3</div><div class="kpi-label">Active Bids</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-trophy"/></svg></div><span class="kpi-trend up">+1</span></div><div class="kpi-value">12</div><div class="kpi-label">Bids Won</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-trending"/></svg></div><span class="kpi-trend down">-2</span></div><div class="kpi-value">4</div><div class="kpi-label">Outbid</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-dollar"/></svg></div><span class="kpi-trend up">↑</span></div><div class="kpi-value">$31k</div><div class="kpi-label">Current Exposure</div></div>
+      </div>
+      <div class="chart-grid" style="margin-bottom:24px">
+        <div class="chart-box">
+          <div class="chart-box-title">Bid Count by Category <span>All time</span></div>
+          <div class="bar-chart-wrap">
+            <div class="bar-chart-yaxis">
+              <span>20</span><span>15</span><span>10</span><span>5</span><span>0</span>
+            </div>
+            <div class="bar-chart-inner">
+              <div class="bar-chart-grid">
+                <div class="bar-chart-gridlines"><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="bar-chart-bars">
+                  <div class="bar-wrap"><div class="bar-val-label">18</div><div class="bar" style="height:90%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">11</div><div class="bar" style="height:55%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">7</div><div class="bar muted" style="height:35%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">5</div><div class="bar muted" style="height:25%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">3</div><div class="bar muted" style="height:15%"></div></div>
+                </div>
+              </div>
+              <div class="bar-xaxis">
+                <span class="bar-label">Watches</span><span class="bar-label">Art</span><span class="bar-label">Gems</span><span class="bar-label">Cars</span><span class="bar-label">Other</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Won vs Outbid by Category <span>Grouped</span></div>
+          <div class="bar-chart-wrap">
+            <div class="bar-chart-yaxis">
+              <span>12</span><span>9</span><span>6</span><span>3</span><span>0</span>
+            </div>
+            <div class="bar-chart-inner">
+              <div class="bar-chart-grid">
+                <div class="bar-chart-gridlines"><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="bar-chart-bars">
+                  <div class="bar-group">
+                    <div class="bar-wrap"><div class="bar-val-label" style="font-size:9px">10</div><div class="bar bar-a" style="height:83%"></div></div>
+                    <div class="bar-wrap"><div class="bar-val-label" style="font-size:9px">4</div><div class="bar bar-b" style="height:33%"></div></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-wrap"><div class="bar-val-label" style="font-size:9px">8</div><div class="bar bar-a" style="height:67%"></div></div>
+                    <div class="bar-wrap"><div class="bar-val-label" style="font-size:9px">3</div><div class="bar bar-b" style="height:25%"></div></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-wrap"><div class="bar-val-label" style="font-size:9px">6</div><div class="bar bar-a" style="height:50%"></div></div>
+                    <div class="bar-wrap"><div class="bar-val-label" style="font-size:9px">2</div><div class="bar bar-b" style="height:17%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="bar-xaxis">
+                <span class="bar-group-label">Watches</span>
+                <span class="bar-group-label">Art</span>
+                <span class="bar-group-label">Gems</span>
+              </div>
+            </div>
+          </div>
+          <div class="grouped-legend">
+            <div class="grouped-legend-item"><div class="grouped-legend-dot" style="background:#c084fc"></div>Won</div>
+            <div class="grouped-legend-item"><div class="grouped-legend-dot" style="background:#60a5fa"></div>Outbid</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-cards" style="margin-bottom:24px">
+        <div class="info-card"><div class="info-num">$18.4k</div><div class="info-sub">Highest Bid</div></div>
+        <div class="info-card"><div class="info-num">$2.6k</div><div class="info-sub">Avg. Bid Value</div></div>
+        <div class="info-card"><div class="info-num">19</div><div class="info-sub">Total Bids Placed</div></div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title">Active Bids</div>
+        <div class="table-wrap">
+          <table class="dash-table">
+            <thead><tr><th>Lot</th><th>Category</th><th>My Bid</th><th>Current</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>Rolex GMT-Master II</td><td>Watches</td><td>$18,400</td><td>$18,400</td><td><span class="status winning">Winning</span></td><td><button class="table-btn">View</button></td></tr>
+              <tr><td>Vintage Leica M3</td><td>Cameras</td><td>$4,200</td><td>$4,800</td><td><span class="status outbid">Outbid</span></td><td><button class="table-btn primary">Bid Higher</button></td></tr>
+              <tr><td>Art Deco Brooch</td><td>Jewellery</td><td>$8,900</td><td>$8,900</td><td><span class="status winning">Winning</span></td><td><button class="table-btn">View</button></td></tr>
+              <tr><td>Picasso Lithograph</td><td>Fine Art</td><td>$22,000</td><td>$24,500</td><td><span class="status outbid">Outbid</span></td><td><button class="table-btn primary">Bid Higher</button></td></tr>
+              <tr><td>A. Lange Saxonia</td><td>Watches</td><td>$35,000</td><td>$35,000</td><td><span class="status winning">Winning</span></td><td><button class="table-btn">View</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ░░ WATCHLIST ░░ -->
+    <div class="dash-panel" id="panel-watchlist">
+      <div class="panel-title">Watchlist</div>
+      <div class="panel-subtitle">Items you are monitoring ahead of bidding.</div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-watchlist"/></svg></div><span class="kpi-trend up">↑</span></div><div class="kpi-value">24</div><div class="kpi-label">Watched Items</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-bell"/></svg></div><span class="kpi-trend up">↑</span></div><div class="kpi-value">6</div><div class="kpi-label">Active Alerts</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-clock"/></svg></div><span class="kpi-trend down">Soon</span></div><div class="kpi-value">3</div><div class="kpi-label">Ending Today</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-dollar"/></svg></div><span class="kpi-trend up">↑</span></div><div class="kpi-value">$380k</div><div class="kpi-label">Combined Est. Value</div></div>
+      </div>
+      <div class="info-cards" style="margin-bottom:24px">
+        <div class="info-card"><div class="info-num">8</div><div class="info-sub">Watches</div></div>
+        <div class="info-card"><div class="info-num">7</div><div class="info-sub">Fine Art</div></div>
+        <div class="info-card"><div class="info-num">9</div><div class="info-sub">Jewellery &amp; Other</div></div>
+      </div>
+      <div class="chart-grid" style="margin-bottom:24px">
+        <div class="chart-box">
+          <div class="chart-box-title">Price Movement (Top 5 Items)</div>
+          <div class="line-chart-wrap">
+            <div class="line-chart-yaxis">
+              <span>$150k</span><span>$100k</span><span>$50k</span><span>$25k</span><span>0</span>
+            </div>
+            <div class="line-chart-inner">
+              <div class="line-chart-container">
+                <div class="line-chart-gridlines"><span></span><span></span><span></span><span></span><span></span></div>
+                <svg class="line-chart-svg" viewBox="0 0 300 120" preserveAspectRatio="none">
+                  <path d="M0,100 L60,80 L120,85 L180,40 L240,55 L300,15" fill="none" stroke="var(--gold)" stroke-width="2"/>
+                  <path d="M0,100 L60,92 L120,98 L180,75 L240,82 L300,65" fill="none" stroke="rgba(255,255,0,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
+                </svg>
+              </div>
+              <div class="line-chart-xaxis">
+                <span class="line-xaxis-label">Mon</span><span class="line-xaxis-label">Tue</span><span class="line-xaxis-label">Wed</span><span class="line-xaxis-label">Thu</span><span class="line-xaxis-label">Fri</span><span class="line-xaxis-label">Sat</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Category Split</div>
+          <div class="stat-bars">
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Watches</span><span class="stat-bar-val">33%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:33%"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Fine Art</span><span class="stat-bar-val">29%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:29%"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Jewellery</span><span class="stat-bar-val">25%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:25%"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Other</span><span class="stat-bar-val">13%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:13%"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title">Watchlist Items</div>
+        <div class="table-wrap">
+          <table class="dash-table">
+            <thead><tr><th>Lot</th><th>Est. Value</th><th>Ends In</th><th>Alert</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>Patek Philippe Calatrava</td><td>$45,000</td><td>2h 14m</td><td><span class="status winning">On</span></td><td><button class="table-btn primary">Bid Now</button></td></tr>
+              <tr><td>Hockney Poolside Study</td><td>$120,000</td><td>1d 3h</td><td><span class="status pending">On</span></td><td><button class="table-btn">View</button></td></tr>
+              <tr><td>Diamond Rivière Necklace</td><td>$78,000</td><td>3d</td><td><span class="status closed">Off</span></td><td><button class="table-btn">View</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ░░ MY COLLECTION ░░ -->
+    <div class="dash-panel" id="panel-collection">
+      <div class="panel-title">My Collection</div>
+      <div class="panel-subtitle">Acquired lots, portfolio valuation and asset performance.</div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-collection"/></svg></div><span class="kpi-trend up">↑</span></div><div class="kpi-value">12</div><div class="kpi-label">Items Owned</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-dollar"/></svg></div><span class="kpi-trend up">+12%</span></div><div class="kpi-value">$142k</div><div class="kpi-label">Current Value</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-trending"/></svg></div><span class="kpi-trend up">↑</span></div><div class="kpi-value">+18%</div><div class="kpi-label">ROI Overall</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-trophy"/></svg></div><span class="kpi-trend up">↑</span></div><div class="kpi-value">3</div><div class="kpi-label">Top Performers</div></div>
+      </div>
+      <div class="info-cards" style="margin-bottom:24px">
+        <div class="info-card"><div class="info-num">$120k</div><div class="info-sub">Cost Basis</div></div>
+        <div class="info-card"><div class="info-num">$22k</div><div class="info-sub">Unrealised Gain</div></div>
+        <div class="info-card"><div class="info-num">$11.8k</div><div class="info-sub">Avg. Item Value</div></div>
+      </div>
+      <div class="chart-grid" style="margin-bottom:24px">
+        <div class="chart-box">
+          <div class="chart-box-title">Portfolio Value Over Time</div>
+          <div class="line-chart-wrap">
+            <div class="line-chart-yaxis">
+              <span>$150k</span><span>$112k</span><span>$75k</span><span>$37k</span><span>0</span>
+            </div>
+            <div class="line-chart-inner">
+              <div class="line-chart-container">
+                <div class="line-chart-gridlines"><span></span><span></span><span></span><span></span><span></span></div>
+                <svg class="line-chart-svg" viewBox="0 0 300 120" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="lg-portfolio" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.3"/>
+                      <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,100 L50,90 L100,82 L150,65 L200,50 L250,30 L300,10" fill="none" stroke="var(--gold)" stroke-width="2"/>
+                  <path d="M0,100 L50,90 L100,82 L150,65 L200,50 L250,30 L300,10 L300,120 L0,120Z" fill="url(#lg-portfolio)"/>
+                </svg>
+              </div>
+              <div class="line-chart-xaxis">
+                <span class="line-xaxis-label">2020</span><span class="line-xaxis-label">2021</span><span class="line-xaxis-label">2022</span><span class="line-xaxis-label">2023</span><span class="line-xaxis-label">2024</span><span class="line-xaxis-label">Cur</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Asset Allocation</div>
+          <div class="stat-bars">
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Horology</span><span class="stat-bar-val">50%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:50%"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Fine Art</span><span class="stat-bar-val">30%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:30%"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Jewellery</span><span class="stat-bar-val">20%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:20%"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title">Acquisition History</div>
+        <div class="table-wrap">
+          <table class="dash-table">
+            <thead><tr><th>Item</th><th>Category</th><th>Bought At</th><th>Current Est.</th><th>ROI</th></tr></thead>
+            <tbody>
+              <tr><td>Rolex Submariner 1969</td><td>Watch</td><td>$14,200</td><td>$19,500</td><td><span class="status winning">+37%</span></td></tr>
+              <tr><td>Modigliani Sketch</td><td>Fine Art</td><td>$55,000</td><td>$68,000</td><td><span class="status winning">+24%</span></td></tr>
+              <tr><td>Victorian Pearl Brooch</td><td>Jewellery</td><td>$8,800</td><td>$9,200</td><td><span class="status pending">+5%</span></td></tr>
+              <tr><td>IWC Pilot 1940s</td><td>Watch</td><td>$22,000</td><td>$28,000</td><td><span class="status winning">+27%</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ░░ INVOICES ░░ -->
+    <div class="dash-panel" id="panel-invoices">
+      <div class="panel-title">Invoices</div>
+      <div class="panel-subtitle">Financial records, payments and transaction history.</div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-invoices"/></svg></div></div><div class="kpi-value">18</div><div class="kpi-label">Total Invoices</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-check"/></svg></div></div><div class="kpi-value">15</div><div class="kpi-label">Paid</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-clock"/></svg></div><span class="kpi-trend down">Due</span></div><div class="kpi-value">3</div><div class="kpi-label">Outstanding</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-dollar"/></svg></div></div><div class="kpi-value">$142k</div><div class="kpi-label">Total Paid</div></div>
+      </div>
+      <div class="chart-grid" style="margin-bottom:24px">
+        <div class="chart-box">
+          <div class="chart-box-title">Monthly Spend</div>
+          <div class="bar-chart-wrap">
+            <div class="bar-chart-yaxis">
+              <span>$50k</span><span>$37k</span><span>$25k</span><span>$12k</span><span>0</span>
+            </div>
+            <div class="bar-chart-inner">
+              <div class="bar-chart-grid">
+                <div class="bar-chart-gridlines"><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="bar-chart-bars">
+                  <div class="bar-wrap"><div class="bar-val-label">$15k</div><div class="bar muted" style="height:30%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">$28k</div><div class="bar" style="height:56%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">$20k</div><div class="bar muted" style="height:40%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">$35k</div><div class="bar" style="height:70%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">$43k</div><div class="bar" style="height:86%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">$50k</div><div class="bar" style="height:100%"></div></div>
+                </div>
+              </div>
+              <div class="bar-xaxis">
+                <span class="bar-label">Oct</span><span class="bar-label">Nov</span><span class="bar-label">Dec</span><span class="bar-label">Jan</span><span class="bar-label">Feb</span><span class="bar-label">Mar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Payment Status</div>
+          <div class="donut-wrap">
+            <svg class="donut-svg" width="90" height="90" viewBox="0 0 42 42">
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="#1a1d2e" stroke-width="6"/>
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="#22C55E" stroke-width="6" stroke-dasharray="83 17" stroke-dashoffset="25"/>
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="#EAB308" stroke-width="6" stroke-dasharray="17 83" stroke-dashoffset="-58"/>
+            </svg>
+            <div class="donut-legend">
+              <div class="legend-row"><div class="legend-dot" style="background:#22C55E"></div>Paid<span class="legend-val">83%</span></div>
+              <div class="legend-row"><div class="legend-dot" style="background:#EAB308"></div>Outstanding<span class="legend-val">17%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-cards" style="margin-bottom:24px">
+        <div class="info-card"><div class="info-num">$9.4k</div><div class="info-sub">Outstanding Balance</div></div>
+        <div class="info-card"><div class="info-num">$7.9k</div><div class="info-sub">Avg. Invoice</div></div>
+        <div class="info-card"><div class="info-num">3</div><div class="info-sub">Due This Week</div></div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title">Invoice History</div>
+        <div class="table-wrap">
+          <table class="dash-table">
+            <thead><tr><th>Invoice</th><th>Lot</th><th>Amount</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>#INV-0018</td><td>A. Lange Saxonia</td><td>$35,000</td><td>Mar 13</td><td><span class="status pending">Due</span></td><td><button class="table-btn primary">Pay Now</button></td></tr>
+              <tr><td>#INV-0017</td><td>Rolex GMT-Master</td><td>$18,400</td><td>Mar 10</td><td><span class="status winning">Paid</span></td><td><button class="table-btn">Download</button></td></tr>
+              <tr><td>#INV-0016</td><td>Modigliani Sketch</td><td>$55,000</td><td>Feb 28</td><td><span class="status winning">Paid</span></td><td><button class="table-btn">Download</button></td></tr>
+              <tr><td>#INV-0015</td><td>Victorian Brooch</td><td>$8,800</td><td>Feb 14</td><td><span class="status winning">Paid</span></td><td><button class="table-btn">Download</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ░░ MARKET TRENDS ░░ -->
+    <div class="dash-panel" id="panel-trends">
+      <div class="panel-title">Market Trends</div>
+      <div class="panel-subtitle">Global auction analytics and real-time market sentiment.</div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-trending"/></svg></div><span class="kpi-trend up">+15%</span></div><div class="kpi-value">142.8</div><div class="kpi-label">Market Index</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-dollar"/></svg></div><span class="kpi-trend up">↑</span></div><div class="kpi-value">$2.4B</div><div class="kpi-label">Global Volume</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-star"/></svg></div><span class="kpi-trend up">+4</span></div><div class="kpi-value">842</div><div class="kpi-label">Active Auctions</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-eye"/></svg></div><span class="kpi-trend up">+12%</span></div><div class="kpi-value">18k</div><div class="kpi-label">Daily Views</div></div>
+      </div>
+      <div class="chart-grid" style="margin-bottom:24px">
+        <div class="chart-box">
+          <div class="chart-box-title">Volume by Category <span>Last 12m</span></div>
+          <div class="bar-chart-wrap">
+            <div class="bar-chart-yaxis"><span>100</span><span>75</span><span>50</span><span>25</span><span>0</span></div>
+            <div class="bar-chart-inner">
+              <div class="bar-chart-grid">
+                <div class="bar-chart-gridlines"><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="bar-chart-bars">
+                  <div class="bar-wrap"><div class="bar-val-label">88</div><div class="bar" style="height:88%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">65</div><div class="bar" style="height:65%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">42</div><div class="bar muted" style="height:42%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">55</div><div class="bar" style="height:55%"></div></div>
+                  <div class="bar-wrap"><div class="bar-val-label">30</div><div class="bar muted" style="height:30%"></div></div>
+                </div>
+              </div>
+              <div class="bar-xaxis"><span class="bar-label">Watch</span><span class="bar-label">Art</span><span class="bar-label">Gems</span><span class="bar-label">Car</span><span class="bar-label">Wine</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Index Growth (OAW 500)</div>
+          <div class="line-chart-wrap">
+            <div class="line-chart-yaxis"><span>200</span><span>150</span><span>100</span><span>50</span><span>0</span></div>
+            <div class="line-chart-inner">
+              <div class="line-chart-container">
+                <div class="line-chart-gridlines"><span></span><span></span><span></span><span></span><span></span></div>
+                <svg class="line-chart-svg" viewBox="0 0 300 120" preserveAspectRatio="none">
+                  <path d="M0,100 L50,85 L100,80 L150,55 L200,45 L250,22 L300,5" fill="none" stroke="var(--gold)" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="line-chart-xaxis"><span class="line-xaxis-label">2020</span><span class="line-xaxis-label">2021</span><span class="line-xaxis-label">2022</span><span class="line-xaxis-label">2023</span><span class="line-xaxis-label">2024</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-cards" style="margin-bottom:24px">
+        <div class="info-card"><div class="info-num">8.4%</div><div class="info-sub">Avg. Yearly Return</div></div>
+        <div class="info-card"><div class="info-num">$420k</div><div class="info-sub">Median Lot Price</div></div>
+        <div class="info-card"><div class="info-num">Gold</div><div class="info-sub">Current Market Tier</div></div>
+      </div>
+      <div class="chart-grid-3" style="margin-bottom:24px">
+        <div class="chart-box">
+          <div class="chart-box-title">Market Sentiment</div>
+          <div class="stat-bars">
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Buyer Confidence</span><span class="stat-bar-val">82%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:82%"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Global Supply</span><span class="stat-bar-val">45%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:45%"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Investment Interest</span><span class="stat-bar-val">91%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:91%"></div></div></div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Top Regions</div>
+          <div class="donut-wrap" style="gap:10px">
+            <svg class="donut-svg" width="60" height="60" viewBox="0 0 42 42">
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="var(--gold)" stroke-width="6" stroke-dasharray="60 40"/>
+            </svg>
+            <div class="donut-legend"><div class="legend-row">Americas<span class="legend-val">60%</span></div><div class="legend-row">EMEA<span class="legend-val">30%</span></div></div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Breaking News</div>
+          <div class="timeline" style="font-size:11px">
+            <div class="tl-entry"><div class="tl-dot" style="width:20px;height:20px"></div><div class="tl-body">Patek Sale Record</div></div>
+            <div class="tl-entry"><div class="tl-dot" style="width:20px;height:20px"></div><div class="tl-body">Asia Market Surge</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title">Asset Class Performance Table</div>
+        <div class="table-wrap"><table class="dash-table">
+          <thead><tr><th>Asset Class</th><th>1Y Return</th><th>Liquidity</th><th>Volatility</th></tr></thead>
+          <tbody>
+            <tr><td>Vintage Watches</td><td>+18.4%</td><td>High</td><td>Medium</td></tr>
+            <tr><td>Modern Art</td><td>+12.1%</td><td>Medium</td><td>High</td></tr>
+            <tr><td>Colored Gems</td><td>+9.8%</td><td>Low</td><td>Low</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- ░░ MESSAGES ░░ -->
+    <div class="dash-panel" id="panel-messages">
+      <div class="panel-title">Messages</div>
+      <div class="panel-subtitle">Direct communication with auctioneers, concierge and sellers.</div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-inbox"/></svg></div></div><div class="kpi-value">5</div><div class="kpi-label">Unread Items</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-clock"/></svg></div></div><div class="kpi-value">12m</div><div class="kpi-label">Avg. Response</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-star"/></svg></div></div><div class="kpi-value">3</div><div class="kpi-label">Priority</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-check"/></svg></div></div><div class="kpi-value">142</div><div class="kpi-label">Archived</div></div>
+      </div>
+      <div class="chart-grid" style="margin-bottom:24px">
+        <div class="chart-box">
+          <div class="chart-box-title">Communication Activity <span>Weekly</span></div>
+          <div class="line-chart-wrap">
+            <div class="line-chart-yaxis"><span>50</span><span>25</span><span>0</span></div>
+            <div class="line-chart-inner">
+              <div class="line-chart-container" style="min-height:80px">
+                <svg class="line-chart-svg" viewBox="0 0 300 80" preserveAspectRatio="none">
+                  <path d="M0,60 L50,40 L100,55 L150,20 L200,35 L250,10 L300,15" fill="none" stroke="var(--gold)" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Sentiment Analysis</div>
+          <div class="donut-wrap">
+            <svg class="donut-svg" width="80" height="80" viewBox="0 0 42 42">
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="#22C55E" stroke-width="6" stroke-dasharray="85 15"/>
+            </svg>
+            <div class="donut-legend"><div class="legend-row">Positive<span class="legend-val">85%</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="info-cards" style="margin-bottom:24px">
+        <div class="info-card"><div class="info-num">98%</div><div class="info-sub">Open Rate</div></div>
+        <div class="info-card"><div class="info-num">24/7</div><div class="info-sub">Concierge Access</div></div>
+        <div class="info-card"><div class="info-num">EN/IT</div><div class="info-sub">Active Languages</div></div>
+      </div>
+      <div class="chart-grid-3" style="margin-bottom:24px">
+        <div class="chart-box">
+           <div class="chart-box-title">Effeciency</div>
+           <div class="stat-bars">
+             <div class="stat-bar-row"><div class="stat-bar-header">Resolution<span class="stat-bar-val">94%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:94%"></div></div></div>
+             <div class="stat-bar-row"><div class="stat-bar-header">Rating<span class="stat-bar-val">4.9/5</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:98%"></div></div></div>
+           </div>
+        </div>
+        <div class="chart-box" style="grid-column:span 2">
+          <div class="chart-box-title">Recent Inbox Notifications</div>
+          <div class="mini-cards">
+            <div class="mini-card"><div style="width:10px;height:10px;background:var(--gold);border-radius:50%"></div><div><h4>Counter-offer recieved for Lot #482</h4><p>Expires in 4 hours</p></div></div>
+            <div class="mini-card"><div style="width:10px;height:10px;background:var(--gold);border-radius:50%"></div><div><h4>New message from OAW Concierge</h4><p>About your shipping preference</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title">Recent Conversations</div>
+        <div class="table-wrap"><table class="dash-table">
+          <thead><tr><th>With</th><th>Topic</th><th>Last Msg</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Admin Sam</td><td>Payment Issue</td><td>2h ago</td><td><span class="status winning">Resolved</span></td></tr>
+            <tr><td>Seller Mark</td><td>Leica M3 Condition</td><td>1d ago</td><td><span class="status pending">Pending</span></td></tr>
+            <tr><td>Concierge</td><td>Global Shipping</td><td>2d ago</td><td><span class="status closed">Closed</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- ░░ CONSIGNMENTS ░░ -->
+    <div class="dash-panel" id="panel-consign">
+      <div class="panel-title">Consignments</div>
+      <div class="panel-subtitle">Manage items you are selling through the OAW platform.</div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-tag"/></svg></div></div><div class="kpi-value">2</div><div class="kpi-label">Active Listings</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-dollar"/></svg></div></div><div class="kpi-value">$18k</div><div class="kpi-label">Est. Revenue</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-eye"/></svg></div></div><div class="kpi-value">412</div><div class="kpi-label">Total Views</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-check"/></svg></div></div><div class="kpi-value">8</div><div class="kpi-label">Items Sold</div></div>
+      </div>
+      <div class="chart-grid" style="margin-bottom:24px">
+        <div class="chart-box">
+           <div class="chart-box-title">Consignment Sales History</div>
+           <div class="bar-chart-wrap">
+             <div class="bar-chart-yaxis"><span>$20k</span><span>$10k</span><span>0</span></div>
+             <div class="bar-chart-inner">
+               <div class="bar-chart-grid" style="min-height:100px"><div class="bar-chart-bars">
+                 <div class="bar-wrap"><div class="bar" style="height:70%"></div><div class="bar-label">Jan</div></div>
+                 <div class="bar-wrap"><div class="bar" style="height:40%"></div><div class="bar-label">Feb</div></div>
+                 <div class="bar-wrap"><div class="bar" style="height:100%"></div><div class="bar-label">Mar</div></div>
+               </div></div>
+             </div>
+           </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Appraisal Trends</div>
+          <div class="line-chart-wrap">
+             <div class="line-chart-yaxis"><span>High</span><span>Avg</span><span>Low</span></div>
+             <div class="line-chart-inner">
+               <div class="line-chart-container" style="min-height:100px">
+                 <svg class="line-chart-svg" viewBox="0 0 300 80" preserveAspectRatio="none"><path d="M0,60 L150,30 L300,5" fill="none" stroke="var(--gold)" stroke-width="2"/></svg>
+               </div>
+             </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-cards" style="margin-bottom:24px">
+        <div class="info-card"><div class="info-num">12%</div><div class="info-sub">Platform Commission</div></div>
+        <div class="info-card"><div class="info-num">14d</div><div class="info-sub">Payout Window</div></div>
+        <div class="info-card"><div class="info-num">A+</div><div class="info-sub">Seller Rating</div></div>
+      </div>
+      <div class="chart-grid-3" style="margin-bottom:24px">
+        <div class="chart-box">
+           <div class="chart-box-title">Selling Stats</div>
+           <div class="stat-bars">
+             <div class="stat-bar-row"><div class="stat-bar-header">Bid/View Ratio<span class="stat-bar-val">5.4%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:54%"></div></div></div>
+             <div class="stat-bar-row"><div class="stat-bar-header">Sell-through<span class="stat-bar-val">88%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:88%"></div></div></div>
+           </div>
+        </div>
+        <div class="chart-box" style="grid-column:span 2">
+          <div class="chart-box-title">Active Disposal List</div>
+          <div class="table-wrap"><table class="dash-table">
+            <thead><tr><th>Asset</th><th>Starting</th><th>Current</th><th>Bids</th></tr></thead>
+            <tbody>
+              <tr><td>Cartier Tank 1980</td><td>$2,400</td><td>$3,800</td><td>14</td></tr>
+              <tr><td>Vintage Luggage Set</td><td>$1,200</td><td>$1,200</td><td>0</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title">Listing Workflow</div>
+        <div class="timeline" style="margin-top:10px">
+           <div class="tl-entry"><div class="tl-dot" style="width:16px;height:16px;background:#22C55E"></div><div class="tl-body"><h4 style="font-size:11px">Item Appraisal Complete</h4></div></div>
+           <div class="tl-entry"><div class="tl-dot" style="width:16px;height:16px;background:var(--gold)"></div><div class="tl-body"><h4 style="font-size:11px">Photography Session</h4></div></div>
+           <div class="tl-entry"><div class="tl-dot" style="width:16px;height:16px;background:rgba(255,255,255,0.2)"></div><div class="tl-body"><h4 style="font-size:11px;opacity:0.5">Auction Live Date (Mar 25)</h4></div></div>
+        </div>
+      </div>
+      <div class="chart-box" style="margin-top:24px">
+         <div class="chart-box-title">Consignment Mix</div>
+         <div class="donut-wrap">
+            <svg class="donut-svg" width="60" height="60" viewBox="0 0 42 42"><circle cx="21" cy="21" r="15.9" fill="none" stroke="var(--gold)" stroke-width="6" stroke-dasharray="80 20"/></svg>
+            <div class="donut-legend"><div class="legend-row">Watches<span class="legend-val">80%</span></div><div class="legend-row">Cars<span class="legend-val">20%</span></div></div>
+         </div>
+      </div>
+    </div>
+
+    <!-- ░░ SETTINGS ░░ -->
+    <div class="dash-panel" id="panel-settings">
+      <div class="panel-title">Settings</div>
+      <div class="panel-subtitle">Manage your account, preferences and security.</div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-user"/></svg></div></div><div class="kpi-value">Profile</div><div class="kpi-label">Connoisseur Tier</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-shield"/></svg></div><span class="kpi-trend up">Active</span></div><div class="kpi-value">2FA</div><div class="kpi-label">Security</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-bell"/></svg></div></div><div class="kpi-value">6</div><div class="kpi-label">Active Alerts</div></div>
+        <div class="kpi-card"><div class="kpi-row"><div class="kpi-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-globe"/></svg></div></div><div class="kpi-value">LTR</div><div class="kpi-label">Language Dir.</div></div>
+      </div>
+      <div class="chart-grid-3" style="margin-bottom:24px">
+        <div class="chart-box">
+          <div class="chart-box-title">Profile Details</div>
+          <div class="stat-bars">
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Profile Complete</span><span class="stat-bar-val">85%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:85%"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Verification</span><span class="stat-bar-val">100%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:100%"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Trust Score</span><span class="stat-bar-val">92%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:92%"></div></div></div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Notification Preferences</div>
+          <div class="stat-bars">
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Email Alerts</span><span class="stat-bar-val" style="color:#22C55E">On</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:100%;background:#22C55E"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">SMS Alerts</span><span class="stat-bar-val" style="color:#EF4444">Off</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:0%"></div></div></div>
+            <div class="stat-bar-row"><div class="stat-bar-header"><span class="stat-bar-label">Push Notifications</span><span class="stat-bar-val" style="color:#22C55E">On</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:100%;background:#22C55E"></div></div></div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Security Overview</div>
+          <div class="timeline">
+            <div class="tl-entry"><div class="tl-dot"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-check"/></svg></div><div class="tl-body"><h4>2FA Enabled</h4><p>Authenticator app</p></div></div>
+            <div class="tl-entry"><div class="tl-dot"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-lock"/></svg></div><div class="tl-body"><h4>Password Changed</h4><p>30 days ago</p></div></div>
+            <div class="tl-entry"><div class="tl-dot"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><use xlink:href="#ic-eye"/></svg></div><div class="tl-body"><h4>Last Login</h4><p>Today, 12:17</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="info-cards">
+        <div class="info-card"><div class="info-num">1996</div><div class="info-sub">Member Since</div></div>
+        <div class="info-card"><div class="info-num">Gold</div><div class="info-sub">Membership Tier</div></div>
+        <div class="info-card"><div class="info-num">EN</div><div class="info-sub">Language</div></div>
+      </div>
+    </div>
+
+  </div><!-- /dash-content -->
+</main>
+
+<script>
+// Panel switching
+document.querySelectorAll('[data-panel]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-panel]').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.dash-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+    if(window.innerWidth < 900) {
+      document.getElementById('dashSidebar').classList.remove('open');
+      document.getElementById('sidebarOverlay').classList.remove('open');
+      document.body.classList.remove('sidebar-open');
+    }
+  });
+});
+
+// Mobile sidebar
+const toggle = document.getElementById('sidebarToggle');
+const overlay = document.getElementById('sidebarOverlay');
+const sidebar = document.getElementById('dashSidebar');
+toggle.addEventListener('click', () => { 
+  sidebar.classList.toggle('open'); 
+  overlay.classList.toggle('open'); 
+  document.body.classList.toggle('sidebar-open'); 
+});
+overlay.addEventListener('click', () => { 
+  sidebar.classList.remove('open'); 
+  overlay.classList.remove('open'); 
+  document.body.classList.remove('sidebar-open'); 
+});
+
+// Globe RTL/LTR in sidebar
+const globeBtn = document.getElementById('globeBtn');
+globeBtn.addEventListener('click', () => {
+  const isRtl = document.documentElement.dir === 'rtl';
+  document.documentElement.dir = isRtl ? 'ltr' : 'rtl';
+  document.body.dir = isRtl ? 'ltr' : 'rtl';
+});
+</script>
+</body>
+</html>

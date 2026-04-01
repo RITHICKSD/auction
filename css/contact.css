@@ -1,0 +1,151 @@
+/* ============================================================
+   CONTACT.CSS — Styling for the 10-Section Professional Page
+   ============================================================ */
+
+/* ── Hero Bold (S1) ── */
+.hero-bold {
+  min-height: 80vh;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 140px;
+  padding-bottom: 60px;
+}
+.hero-glow-blob {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,0,0.06) 0%, transparent 75%);
+  z-index: 0;
+}
+
+.contact-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.contact-hero-text .hero-title, .contact-hero-text .hero-sub {
+  text-align: left;
+}
+.contact-hero-img {
+  height: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+/* ── Main Form (S2) ── */
+.contact-grid-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.form-wrapper {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 60px;
+  box-shadow: var(--shadow-deep);
+}
+#pro-contact-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field { margin-bottom: 32px; }
+.field label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; }
+.field input, .field textarea, .field select { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 16px; border-radius: 4px; color: var(--white); font-family: var(--font-sans); outline: none; transition: 0.3s; }
+.field input:focus, .field textarea:focus { border-color: var(--gold); background: rgba(255,255,0,0.05); }
+
+.connect-card { padding: 40px; background: var(--navy-mid); border: 1px solid var(--border); border-radius: 20px; text-align: center; }
+.connect-card h3 { font-family: var(--font-serif); font-size: 24px; margin-bottom: 12px; }
+.contact-links { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+.contact-links a { font-weight: 700; color: var(--gold); font-size: 15px; }
+
+/* ── Offices (S3) ── */
+.offices-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+.off-card { padding: 32px; background: var(--navy-card); border-bottom: 3px solid var(--gold); border-radius: 12px; transition: 0.3s; }
+.off-card:hover { transform: translateY(-5px); background: var(--navy-mid); }
+.off-card h4 { font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px; }
+
+/* ── Directory (S4) ── */
+.dir-list { display: flex; flex-direction: column; gap: 12px; margin-top: 40px; }
+.dir-item { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.dir-item span { font-weight: 600; color: var(--white); }
+.dir-item a { color: var(--gold); font-weight: 700; letter-spacing: 1px; }
+
+/* ── Map visual (S5) ── */
+.map-view-box { height: 500px; background: var(--navy-mid); border: 1px solid var(--border); border-radius: 24px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.map-dots { position: relative; width: 100%; max-width: 900px; height: 100%; max-height: 450px; }
+.map-dots::before { content: ''; position: absolute; inset: 0; background-color: var(--gold); -webkit-mask-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg'); mask-size: contain; mask-repeat: no-repeat; mask-position: center; opacity: 0.15; }
+.dot { position: absolute; width: 10px; height: 10px; background: var(--gold); border-radius: 50%; transform: translate(-50%, -50%); z-index: 2; cursor: pointer; animation: mapPulse 2s infinite; }
+@keyframes mapPulse { 0% { box-shadow: 0 0 0 0 rgba(255,215,0,0.6); } 70% { box-shadow: 0 0 0 15px rgba(255,215,0,0); } 100% { box-shadow: 0 0 0 0 rgba(255,215,0,0); } }
+.dot.ld { top: 21%; left: 47%; }
+.dot.ny { top: 29%; left: 24%; }
+.dot.hk { top: 43%; left: 78%; }
+.dot.dx { top: 40%; left: 60%; }
+.dot.sg { top: 55%; left: 75%; }
+.dot.ty { top: 31%; left: 84%; }
+.dot.zh { top: 22%; left: 49%; }
+.map-note { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; background: rgba(0,0,0,0.6); padding: 8px 16px; border-radius: 20px; backdrop-filter: blur(5px); pointer-events: none; }
+
+/* ── Social (S7) ── */
+.social-card { background: var(--navy-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 20px; transition: all var(--dur-med); cursor: pointer; }
+.social-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: var(--shadow-gold); }
+@media (max-width: 1024px) {
+  .section div[style*="grid-template-columns: repeat(4"] { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 768px) {
+  .section div[style*="grid-template-columns: repeat(4"] { grid-template-columns: 1fr !important; }
+}
+
+/* ── FAQ (S8) ── */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.faq-visual-img-box {
+  height: 100%;
+  min-height: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.faq-accordion { max-width: 100%; }
+.faq-item { margin-bottom: 12px; cursor: pointer; }
+.faq-q { display: flex; align-items: center; justify-content: space-between; padding: 24px; background: var(--navy-card); border: 1px solid var(--border); border-radius: 12px; font-weight: 600; transition: border-color var(--dur-fast); }
+.faq-item:hover .faq-q { border-color: var(--gold); }
+.faq-item button { transition: transform 0.3s ease; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease), padding-top 0.4s var(--ease); font-size: 14px; color: var(--muted); padding: 0 24px; }
+.faq-item.active .faq-a { max-height: 200px; padding-top: 16px; padding-bottom: 16px; }
+.faq-item.active .faq-q button { transform: rotate(180deg); }
+
+/* ── Press (S9) ── */
+.press-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.press-box { padding: 40px; background: var(--navy-mid); border: 1px solid var(--border); border-radius: 20px; text-align: center; }
+.press-box h3 { font-family: var(--font-serif); font-size: 22px; margin-bottom: 12px; }
+
+/* RTL Adjustments */
+body[dir="rtl"] .hero-bold { text-align: right; }
+body[dir="rtl"] .form-wrapper { order: 2; text-align: right; }
+body[dir="rtl"] .field { text-align: right; }
+body[dir="rtl"] .dir-item { flex-direction: row-reverse; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-grid-main { grid-template-columns: 1fr; }
+  .offices-grid, .press-grid { grid-template-columns: 1fr; }
+  .form-wrapper { padding: 32px; }
+  #pro-contact-form .row { grid-template-columns: 1fr; }
+  .contact-hero-grid { grid-template-columns: 1fr; }
+  .contact-hero-img { height: 350px; margin-top: 40px; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .faq-visual-img-box { min-height: 350px; margin-top: 24px; border-radius: 16px; }
+}
+
+@media (max-width: 768px) {
+  .dir-item { flex-direction: column; gap: 8px; justify-content: flex-start; }
+}

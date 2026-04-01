@@ -1,0 +1,170 @@
+/* ============================================================
+   ABOUT.CSS — Styling for the 12-Section Heritage Page
+   ============================================================ */
+
+/* ── Hero Split (S1) ── */
+.hero-split {
+  height: 90vh;
+  display: flex;
+  background: var(--navy);
+  overflow: hidden;
+}
+.hero-split-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 5% 0 10%;
+  position: relative;
+  z-index: 2;
+}
+.hero-split-right {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.hero-split-right::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to right, var(--navy), transparent);
+}
+.hero-parallax-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform 10s linear;
+}
+.hero-split:hover .hero-parallax-img { transform: scale(1); }
+
+.hero-scroll-hint {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--muted);
+}
+.hint-line { width: 50px; height: 1px; background: var(--gold); }
+
+.hero-float-tag {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 8px 20px;
+  font-weight: 800;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 4px;
+}
+
+/* ── Phil Grid (S3) ── */
+.phil-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 32px;
+}
+.phil-card {
+  padding: 32px 24px;
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+.phil-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: var(--shadow-deep); }
+.phil-icon { font-size: 40px; margin-bottom: 24px; }
+.phil-card h3 { font-family: var(--font-serif); font-size: 22px; color: var(--gold); margin-bottom: 16px; }
+.phil-card p { font-size: 15px; color: var(--muted); line-height: 1.7; }
+
+/* ── Ticker (S4) ── */
+.ticker-wrap { background: var(--gold); padding: 24px 0; overflow: hidden; }
+.ticker-content { display: flex; gap: 80px; white-space: nowrap; animation: tickerScroll 20s linear infinite; }
+.ticker-item { font-family: var(--font-serif); font-size: 24px; font-weight: 900; color: var(--navy); text-transform: uppercase; }
+@keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── Timeline (S5) ── */
+.timeline-vertical { max-width: 800px; margin: 24px auto; position: relative; }
+.timeline-vertical::before { content:''; position:absolute; top:0; bottom:0; left:50%; width:1px; background: var(--border); }
+.tl-item { width: 50%; padding: 40px; position: relative; }
+.tl-item:nth-child(even) { margin-left: auto; text-align: left; }
+.tl-item:nth-child(odd) { text-align: right; }
+.tl-year { font-family: var(--font-serif); font-size: 32px; font-weight: 900; color: var(--gold); margin-bottom: 12px; }
+.tl-desc { color: var(--muted); font-size: 14px; }
+.tl-item::after { content:''; position:absolute; top:52px; left:50%; width:12px; height:12px; background: var(--gold); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 0 6px var(--navy); }
+
+/* ── Team (S6) ── */
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 32px; }
+.team-card { text-align: center; }
+.team-img-box { height: 350px; background: var(--navy-mid); border-radius: 20px; margin-bottom: 24px; border: 1px solid var(--border); position: relative; overflow: hidden; }
+.team-img-box img { width: 100%; height: 100%; object-fit: cover; }
+.team-card h4 { font-family: var(--font-serif); font-size: 20px; margin-bottom: 6px; }
+.team-card p { font-size: 12px; text-transform: uppercase; color: var(--gold); font-weight: 700; letter-spacing: 2px; }
+
+/* ── Presence (S7) ── */
+.presence-box { height: 400px; background: url('../images/fine_art.png') center/cover; border-radius: 32px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px; position: relative; overflow: hidden; border: 1px solid var(--border); }
+.presence-box::after { content:''; position:absolute; inset:0; background: rgba(0,0,0,0.8); }
+.presence-text { position: relative; z-index: 2; max-width: 600px; }
+
+/* ── Portrait (S8) ── */
+.portrait-quote { text-align: center; padding: 40px 0; }
+.portrait-quote p { font-family: var(--font-script); font-size: clamp(32px, 5vw, 56px); color: var(--gold); font-style: normal; line-height: 1.2; margin-bottom: 40px; text-transform: none; }
+.portrait-quote cite { font-style: normal; font-size: 14px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); font-weight: 700; }
+
+/* ── Logo Cloud (S9) ── */
+.logo-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px 80px;
+  margin-top: 32px;
+}
+.logo-cloud span {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--white);
+  opacity: 0.3;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+.logo-cloud span:hover { opacity: 0.8; }
+
+/* ── Process Circle (S10) ── */
+.process-circle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.p-cell { text-align: center; padding: 24px; border: 1px dashed var(--border); border-radius: 50%; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.p-cell h3 { font-family: var(--font-serif); font-size: 28px; color: var(--gold); margin-bottom: 12px; }
+.p-cell p { font-size: 12px; color: var(--white); font-weight: 600; line-height: 1.4; }
+
+/* ── CTA BG ── */
+.bg-gold-gradient { background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light)); padding: 60px 0; }
+.section-title.dark { color: var(--navy); }
+.btn-navy { background: var(--navy); color: var(--white); padding: 16px 32px; border-radius: 4px; }
+.btn-outline-navy { border: 1px solid var(--navy); color: var(--navy); padding: 16px 32px; border-radius: 4px; }
+
+/* RTL Adjustments */
+body[dir="rtl"] .hero-split { flex-direction: row-reverse; }
+body[dir="rtl"] .hero-split-left { text-align: right; padding: 0 10% 0 5%; }
+body[dir="rtl"] .hero-scroll-hint { flex-direction: row-reverse; }
+body[dir="rtl"] .tl-item:nth-child(even) { text-align: right; }
+body[dir="rtl"] .tl-item:nth-child(odd) { text-align: left; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-split { flex-direction: column; height: auto; }
+  .hero-split-left { padding: 120px 24px 60px; }
+  .hero-split-right { height: 400px; }
+  .phil-grid, .team-grid { grid-template-columns: 1fr; }
+  .process-circle-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .process-circle-grid { grid-template-columns: 1fr; gap: 32px; }
+  .p-cell { max-width: 240px; margin: 0 auto; padding: 24px; }
+}

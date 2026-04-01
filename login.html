@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | OAW — Online Auction World</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+<body>
+
+  <div class="auth-page">
+    <!-- Globe Toggle -->
+    <div class="auth-container">
+      <!-- Globe Toggle -->
+      <div class="auth-globe">
+        <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR" title="Toggle RTL/LTR" style="border: 1px solid var(--border); padding: 10px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="auth-logo">
+        <a href="home1.html">
+          <svg class="oaw-logo-svg" width="100" height="45" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+            <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900" fill="var(--gold)">OAW</text>
+            <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5" stroke-linecap="square" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="auth-header">
+        <h1 class="auth-title">Welcome back!</h1>
+        <p class="auth-subtitle">Please login to your account</p>
+      </div>
+
+      <form class="auth-form" action="user-dashboard.html">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="john@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-input" placeholder="Enter your password" required>
+        </div>
+
+        <div class="auth-meta">
+          <label class="remember-me">
+            <input type="checkbox"> Remember me
+          </label>
+          <a href="#" class="forgot-pass">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="auth-btn btn-auth-primary">LOGIN</button>
+      </form>
+
+      <div class="auth-divider">OR</div>
+
+      <div class="social-btns">
+        <button class="btn-social">
+          <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google" class="social-icon">
+          Continue with Google
+        </button>
+        <button class="btn-social">
+          <img src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg" alt="Facebook" class="social-icon">
+          Continue with Facebook
+        </button>
+      </div>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="register.html">Register here</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const globeBtn = document.getElementById('globe-btn');
+    globeBtn.addEventListener('click', () => {
+      const isRtl = document.documentElement.dir === 'rtl';
+      document.documentElement.dir = isRtl ? 'ltr' : 'rtl';
+      document.body.dir = isRtl ? 'ltr' : 'rtl';
+      globeBtn.title = isRtl ? 'Switch to RTL' : 'Switch to LTR';
+    });
+  </script>
+</body>
+</html>

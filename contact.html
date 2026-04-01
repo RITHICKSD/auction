@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Our Specialists — OAW | Global Concierge</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+<body>
+  <!-- Hidden SVG Sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-bolt" viewBox="0 0 24 24">
+      <path d="M13 10V3L4 14H11V21L20 10H13Z" />
+    </symbol>
+    <symbol id="icon-linkedin-brand" viewBox="0 0 24 24">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+      <circle cx="4" cy="4" r="2" />
+    </symbol>
+    <symbol id="icon-instagram-brand" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01" />
+    </symbol>
+    <symbol id="icon-wechat-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/>
+    </symbol>
+    <symbol id="icon-telegram-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m22 2-7 20-4-9-9-4Z"/>
+      <path d="M22 2 11 13"/>
+    </symbol>
+  </svg>
+
+<!-- ░░░ PAGE LOADER ░░░ -->
+<div id="page-loader">
+  <div class="loader-logo">
+    <svg class="oaw-logo-svg" direction="ltr" width="120" height="50" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+      <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900" fill="var(--gold)">OAW</text>
+      <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5" stroke-linecap="square" />
+    </svg>
+  </div>
+</div>
+
+<div id="cursor-glow"></div>
+
+<!-- ░░░ SITE HEADER ░░░ -->
+<header id="site-header">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="home1.html" class="site-logo">
+        <svg class="oaw-logo-svg" direction="ltr" width="90" height="40" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+          <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900" fill="var(--gold)">OAW</text>
+          <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5" stroke-linecap="square" />
+        </svg>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main navigation">
+
+        <!-- Home -->
+        <div class="nav-item">
+          <a href="home1.html" class="nav-link" data-page="home1.html">
+            Home <span class="chevron">▾</span>
+          </a>
+          <div class="dropdown">
+            <a href="home1.html" class="dropdown-link" data-page="home1.html">Home 1</a>
+            <a href="home2.html" class="dropdown-link" data-page="home2.html">Home 2</a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" data-page="about.html">About</a>
+        </div>
+
+        <!-- Services -->
+        <div class="nav-item">
+          <a href="services.html" class="nav-link" data-page="services.html">Services</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link active" data-page="contact.html">Contact</a>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            Dashboard <span class="chevron">▾</span>
+          </a>
+          <div class="dropdown">
+            <a href="user-dashboard.html" class="dropdown-link" data-page="user-dashboard.html">User Dashboard</a>
+            <div class="dropdown-divider"></div>
+            <a href="admin-dashboard.html" class="dropdown-link" data-page="admin-dashboard.html">Admin Dashboard</a>
+          </div>
+        </div>
+
+      </nav>
+
+      <div class="header-right">
+        <!-- Live Status integrated in Header -->
+        <div class="live-status-header">
+          <span class="live-dot"></span>
+          <span class="live-text">Live Now</span>
+        </div>
+
+        <!-- Globe — click to toggle RTL/LTR -->
+        <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR" title="Switch to RTL"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg></button>
+
+        <a href="login.html" class="header-cta">LOGIN</a>
+
+        <!-- Mobile toggle -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ░░░ MOBILE NAV ░░░ -->
+<nav id="mobile-nav" aria-label="Mobile navigation">
+
+  <div class="mobile-nav-item">
+    <a href="#" class="mobile-nav-link" data-page="home1.html">
+      Home
+      <button class="mobile-dd-toggle" aria-label="Toggle home dropdown">▾</button>
+    </a>
+    <div class="mobile-dropdown">
+      <a href="home1.html" class="mobile-dd-link" data-page="home1.html">Home 1</a>
+      <a href="home2.html" class="mobile-dd-link" data-page="home2.html">Home 2</a>
+    </div>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a href="about.html" class="mobile-nav-link" data-page="about.html">About</a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="services.html" class="mobile-nav-link" data-page="services.html">Services</a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="contact.html" class="mobile-nav-link active" data-page="contact.html">Contact</a>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a href="#" class="mobile-nav-link">
+      Dashboard
+      <button class="mobile-dd-toggle" aria-label="Toggle dashboard dropdown">▾</button>
+    </a>
+    <div class="mobile-dropdown">
+      <a href="user-dashboard.html" class="mobile-dd-link" data-page="user-dashboard.html">User Dashboard</a>
+      <a href="admin-dashboard.html" class="mobile-dd-link" data-page="admin-dashboard.html">Admin Dashboard</a>
+    </div>
+  </div>
+
+  <div class="mobile-nav-bottom">
+    <a href="login.html" class="btn btn-primary" style="justify-content:center;"><svg class="icon icon-margin-r">
+          <use xlink:href="#icon-bolt"></use>
+        </svg> LOGIN</a>
+  </div>
+
+</nav>
+
+<button id="back-to-top">▲</button>
+<main>
+  <!-- S1 — UNIQUE HERO: BOLD DARKNESS -->
+  <section id="c-hero" class="hero-bold">
+    <div class="container relative z-1">
+      <div class="contact-hero-grid">
+         <div data-anim="fade-right" class="contact-hero-text">
+           <div class="section-tag" style="margin-left: 0; margin-right: auto;">Direct Window</div>
+           <h1 class="hero-title">Connect with <br> <span class="gold">Absolute</span> Discretion</h1>
+           <p class="hero-sub" style="margin: 0 0 32px 0;">Our global specialist team is available 24/7 to manage your private acquisitions and consignment inquiries.</p>
+           
+           <p style="font-size: 15px; color: var(--muted); max-width: 500px; margin-bottom: 40px; line-height: 1.6;">Whether you are looking to deaccession a generational estate, verify a high-value horological artifact, or require immediate institutional logistics, our Private Office guarantees complete confidentiality and flawless execution.</p>
+           
+           <div style="display: flex; gap: 40px;">
+              <div style="border-left: 2px solid var(--gold); padding-left: 16px;">
+                 <div class="gold" style="font-size: 24px; font-weight: 900;">&lt; 1 Hr</div>
+                 <p style="font-size: 12px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">Response Time</p>
+              </div>
+              <div style="border-left: 2px solid var(--gold); padding-left: 16px;">
+                 <div class="gold" style="font-size: 24px; font-weight: 900;">RSA</div>
+                 <p style="font-size: 12px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">256-bit Encrypted</p>
+              </div>
+           </div>
+         </div>
+         
+         <div class="hero-right-col relative" data-anim="fade-left">
+            <div class="contact-hero-img">
+               <img src="images/a15.webp" alt="OAW Headquarters" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+         </div>
+      </div>
+    </div>
+    <div class="hero-glow-blob"></div>
+  </section>
+
+  <!-- S2 — MAIN INQUIRY FORM -->
+  <section id="s-form" class="section">
+    <div class="container">
+       <div class="contact-grid-main">
+          <div class="form-wrapper" data-anim="fade-right">
+             <form id="pro-contact-form">
+                <div class="row">
+                   <div class="field">
+                      <label>Full Name</label>
+                      <input type="text" placeholder="Johnathan Doe" required />
+                   </div>
+                   <div class="field">
+                      <label>Email</label>
+                      <input type="email" placeholder="julian@collector.com" required />
+                   </div>
+                </div>
+                <div class="field">
+                   <label>Inquiry Type</label>
+                   <select>
+                      <option>Consignment Estimation</option>
+                      <option>Private Acquisition</option>
+                      <option>Technical Support</option>
+                   </select>
+                </div>
+                <div class="field">
+                   <label>Message</label>
+                   <textarea rows="6" placeholder="How may our specialists assist you?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">⚡ Transmit Inquiry</button>
+             </form>
+          </div>
+          <div class="form-aside" data-anim="fade-left">
+             <div class="connect-card">
+                <h3>Priority Concierge</h3>
+                <p>Private Office members receive direct lines to their dedicated specialist.</p>
+                <div class="line"></div>
+                <div class="contact-links">
+                   <a href="tel:+442079460123">🇬🇧 +44 20 7946 0123</a>
+                   <a href="tel:+12125550198">🇺🇸 +1 212 555 0198</a>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S3 — GLOBAL OFFICES GRID -->
+  <section class="section bg-mid">
+     <div class="container">
+        <h2 class="section-title text-center">Global <span class="gold">Residences</span></h2>
+        <div class="offices-grid">
+           <div class="off-card">
+              <h4>New York</h4>
+              <p>Park Avenue Highland Tower</p>
+              <p style="font-size:12px; color:var(--muted); margin-top:8px;">Head of Americas Specialist Hub</p>
+           </div>
+           <div class="off-card">
+              <h4>London</h4>
+              <p>Berkeley Square, Mayfair</p>
+              <p style="font-size:12px; color:var(--muted); margin-top:8px;">Old World Heritage & Art HQ</p>
+           </div>
+           <div class="off-card">
+              <h4>Hong Kong</h4>
+              <p>Pedder Building, Central</p>
+              <p style="font-size:12px; color:var(--muted); margin-top:8px;">East Asian Advisory Center</p>
+           </div>
+           <div class="off-card">
+              <h4>Dubai</h4>
+              <p>DIFC Precinct Building 4</p>
+              <p style="font-size:12px; color:var(--muted); margin-top:8px;">Middle East Private Office</p>
+           </div>
+        </div>
+        <div class="offices-grid" style="margin-top:24px;">
+           <div class="off-card">
+              <h4>Zurich</h4>
+              <p>Bahnhofstrasse 12</p>
+              <p style="font-size:12px; color:var(--muted); margin-top:8px;">High-Security Vault & Appraisal</p>
+           </div>
+           <div class="off-card">
+              <h4>Paris</h4>
+              <p>Rue du Faubourg Saint-Honoré</p>
+              <p style="font-size:12px; color:var(--muted); margin-top:8px;">European Modernism Center</p>
+           </div>
+           <div class="off-card">
+              <h4>Singapore</h4>
+              <p>Marina Bay Financial Centre</p>
+              <p style="font-size:12px; color:var(--muted); margin-top:8px;">ASEAN Logistics Terminal</p>
+           </div>
+           <div class="off-card">
+              <h4>Tokyo</h4>
+              <p>Ginza Chuo-ku</p>
+              <p style="font-size:12px; color:var(--muted); margin-top:8px;">Contemporary Fine Art Bureau</p>
+           </div>
+        </div>
+     </div>
+  </section>
+
+  <!-- S4 — SPECIALIST DIRECTORY -->
+  <section class="section">
+    <div class="container">
+       <h2 class="section-title">Department <span class="gold">Specialists</span></h2>
+       <div class="dir-list">
+          <div class="dir-item"><span>Horology (Signature Watches)</span><a href="mailto:watches@oaw.com">watches@oaw.com</a></div>
+          <div class="dir-item"><span>Old Masters & 19th Century Art</span><a href="mailto:art@oaw.com">art@oaw.com</a></div>
+          <div class="dir-item"><span>Rare Diamonds & High Jewelry</span><a href="mailto:jewelry@oaw.com">jewelry@oaw.com</a></div>
+          <div class="dir-item"><span>Collector Automobiles</span><a href="mailto:cars@oaw.com">cars@oaw.com</a></div>
+          <div class="dir-item"><span>Rare Books & Manuscripts</span><a href="mailto:books@oaw.com">books@oaw.com</a></div>
+          <div class="dir-item"><span>Fine Wine & Spirits</span><a href="mailto:spirits@oaw.com">spirits@oaw.com</a></div>
+          <div class="dir-item"><span>Estate & Private Collection Management</span><a href="mailto:estates@oaw.com">estates@oaw.com</a></div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S5 — INTERACTIVE MAP (ENHANCED) -->
+  <section class="section">
+     <div class="container">
+        <div class="map-view-box" data-anim="scale">
+           <div class="map-dots">
+              <div class="dot ld" title="London"></div>
+              <div class="dot ny" title="New York"></div>
+              <div class="dot hk" title="Hong Kong"></div>
+              <div class="dot dx" title="Dubai"></div>
+              <div class="dot sg" title="Singapore"></div>
+              <div class="dot ty" title="Tokyo"></div>
+              <div class="dot zh" title="Zurich"></div>
+           </div>
+           <p class="map-note">Pulsing nodes indicate our primary physical galleries.</p>
+        </div>
+     </div>
+  </section>
+
+  <!-- S6 — DIRECT CHAT / CONCIERGE -->
+  <section class="section bg-gold-gradient">
+    <div class="container text-center">
+       <h2 class="section-title" style="color: #000000;">Instant Consultation</h2>
+       <p style="color:var(--navy); font-weight:600; margin-bottom:24px;">Click to initiate a secure encrypted video or chat session with a duty specialist.</p>
+       <button class="btn btn-navy">Launch OAW Secure Chat</button>
+    </div>
+  </section>
+
+  <!-- S7 — SOCIAL CONNECTIVITY ENHANCED -->
+  <section class="section">
+    <div class="container text-center">
+       <h2 class="section-title">Exclusive <span class="gold">Channels</span></h2>
+       <p class="section-subtitle mx-auto" style="margin-bottom: 48px;">Connect directly via our secure and established social endpoints.</p>
+       
+       <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+          <a href="#" class="social-card" style="text-decoration: none; display: block;" data-anim="fade-up">
+             <div class="gold" style="margin-bottom: 16px;">
+                <svg class="icon icon-lg icon-gold">
+                   <use xlink:href="#icon-instagram-brand"></use>
+                </svg>
+             </div>
+             <h4 style="color:var(--white);">Instagram</h4>
+             <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">Curated Auctions</p>
+          </a>
+          <a href="#" class="social-card" style="text-decoration: none; display: block;" data-anim="fade-up" data-delay="0.1">
+             <div class="gold" style="margin-bottom: 16px;">
+                <svg class="icon icon-lg icon-gold">
+                   <use xlink:href="#icon-linkedin-brand"></use>
+                </svg>
+             </div>
+             <h4 style="color:var(--white);">LinkedIn</h4>
+             <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">Corporate News</p>
+          </a>
+          <a href="#" class="social-card" style="text-decoration: none; display: block;" data-anim="fade-up" data-delay="0.2">
+             <div class="gold" style="margin-bottom: 16px;">
+                <svg class="icon icon-lg icon-gold">
+                   <use xlink:href="#icon-wechat-brand"></use>
+                </svg>
+             </div>
+             <h4 style="color:var(--white);">WeChat VIP</h4>
+             <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">Asia Concierge</p>
+          </a>
+          <a href="#" class="social-card" style="text-decoration: none; display: block;" data-anim="fade-up" data-delay="0.3">
+             <div class="gold" style="margin-bottom: 16px;">
+                <svg class="icon icon-lg icon-gold">
+                   <use xlink:href="#icon-telegram-brand"></use>
+                </svg>
+             </div>
+             <h4 style="color:var(--white);">Telegram</h4>
+             <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">Encrypted Bidding</p>
+          </a>
+       </div>
+    </div>
+  </section>
+
+  <!-- S8 — FAQ ACCORDION ENHANCED -->
+  <section class="section bg-mid">
+     <div class="container">
+        <h2 class="section-title text-center" style="margin-bottom:60px;">Frequent <span class="gold">Enquiries</span></h2>
+        
+        <div class="faq-grid">
+           <div class="faq-accordion">
+              <div class="faq-item" onclick="this.classList.toggle('active')">
+                 <div class="faq-q"><span class="gold" style="font-weight:900; margin-right:12px;">Q.</span> How do I verify a lot's provenance? <button style="background:none;border:none;color:var(--gold);font-size:16px;">▾</button></div>
+                 <div class="faq-a">
+                    <p>All items undergo a rigorous 3-stage authentication process by our in-house specialists and external forensic partners.</p>
+                 </div>
+              </div>
+              <div class="faq-item" onclick="this.classList.toggle('active')">
+                 <div class="faq-q"><span class="gold" style="font-weight:900; margin-right:12px;">Q.</span> What are the bidding premiums for live auctions? <button style="background:none;border:none;color:var(--gold);font-size:16px;">▾</button></div>
+                 <div class="faq-a">
+                    <p>Our standard buyer's premium is 25% on the first $500,000, and 20% thereafter, exclusive of local taxes.</p>
+                 </div>
+              </div>
+              <div class="faq-item" onclick="this.classList.toggle('active')">
+                 <div class="faq-q"><span class="gold" style="font-weight:900; margin-right:12px;">Q.</span> Do you offer climate-controlled temporary storage? <button style="background:none;border:none;color:var(--gold);font-size:16px;">▾</button></div>
+                 <div class="faq-a">
+                    <p>Yes, we operate high-security bonded warehouses in Geneva, London, and Singapore for up to 90 days post-sale.</p>
+                 </div>
+              </div>
+              <div class="faq-item" onclick="this.classList.toggle('active')">
+                 <div class="faq-q"><span class="gold" style="font-weight:900; margin-right:12px;">Q.</span> How can I register as a phone bidder? <button style="background:none;border:none;color:var(--gold);font-size:16px;">▾</button></div>
+                 <div class="faq-a">
+                    <p>Phone bidding requires pre-registration and a financial reference check completed 48 hours before the auction.</p>
+                 </div>
+              </div>
+              <div class="faq-item" onclick="this.classList.toggle('active')">
+                 <div class="faq-q"><span class="gold" style="font-weight:900; margin-right:12px;">Q.</span> What payment methods are accepted for settlement? <button style="background:none;border:none;color:var(--gold);font-size:16px;">▾</button></div>
+                 <div class="faq-a">
+                    <p>We accept wire transfers in USD, EUR, GBP, and select cryptocurrencies via our institutional partners.</p>
+                 </div>
+              </div>
+           </div>
+           
+           <div class="faq-visual relative" data-anim="fade-left">
+              <div class="faq-visual-img-box">
+                 <img src="images/o3.webp" alt="OAW Verification" style="width:100%; height:100%; object-fit:cover; border: 1px solid var(--border); border-radius: 24px;">
+              </div>
+           </div>
+        </div>
+     </div>
+  </section>
+
+  <!-- S9 — PRESS & INSTITUTIONAL -->
+  <section class="section">
+    <div class="container">
+       <div class="press-grid">
+         <div class="press-box"><h3>Media Requests</h3><p>press@oaw.com</p><p style="font-size:12px; margin-top:8px;">Journalist inquiries and press kit access.</p></div>
+         <div class="press-box"><h3>Museum Relations</h3><p>institutional@oaw.com</p><p style="font-size:12px; margin-top:8px;">Deaccessioning and curatorial consultation.</p></div>
+         <div class="press-box"><h3>Legal & Compliance</h3><p>legal@oaw.com</p><p style="font-size:12px; margin-top:8px;">KYC, AML, and private contract and governance.</p></div>
+         <div class="press-box"><h3>Partnerships</h3><p>partners@oaw.com</p><p style="font-size:12px; margin-top:8px;">Luxury brand and platform integration.</p></div>
+       </div>
+    </div>
+  </section>
+
+  <!-- S10 — APPOINTMENT CTA -->
+  <section class="section bg-card">
+    <div class="container text-center">
+       <h2 class="section-title">Visit Our <span class="gold">Galleries</span></h2>
+       <p class="section-subtitle">Private viewings are available by appointment only at our London, New York, and Hong Kong locations.</p>
+       <button class="btn btn-outline" style="margin-top:24px;">Book a Private Viewing</button>
+    </div>
+  </section>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer style="background:#000000;border-top:1px solid var(--border);padding:60px 0 30px;">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="home1.html" class="site-logo" style="margin-bottom:20px;display:inline-flex;">
+        <svg class="oaw-logo-svg" direction="ltr" width="90" height="40" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+          <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900" fill="var(--gold)">OAW</text>
+          <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5" stroke-linecap="square" />
+        </svg>
+        </a>
+        <p style="color:var(--muted);font-size:14px;line-height:1.8;max-width:300px;margin-top:16px;">The world's most trusted premium online auction platform. Connecting collectors with extraordinary objects since 1996.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Navigation</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="home1.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Home</a>
+          <a href="about.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">About</a>
+          <a href="services.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Services</a>
+          <a href="contact.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Dashboards</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="user-dashboard.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">User Dashboard</a>
+          <a href="admin-dashboard.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Admin Dashboard</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Connect</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="#" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">𝕏</a>
+          <a href="#" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">in</a>
+          <a href="#" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">📷</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <p style="color:var(--muted);font-size:13px;">© 2026 Online Auction World. All rights reserved.</p>
+      <p style="color:var(--muted);font-size:13px;">Designed with ♥ for collectors worldwide</p>
+    </div>
+  </div>
+</footer>
+<script src="js/header.js"></script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('animated');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

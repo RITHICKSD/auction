@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OAW — Online Auction World | Home</title>
+  <meta name="description"
+    content="OAW is the world's premier online auction platform. Bid on luxury watches, fine art, rare jewellery, vintage cars & more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/home1.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+
+<body>
+  <!-- Hidden SVG Sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-bolt" viewBox="0 0 24 24">
+      <path d="M13 10V3L4 14H11V21L20 10H13Z" />
+    </symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24">
+      <path
+        d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-2.34M12 4h4v10.66c0 2.21-1.79 4.34-4 4.34s-4-2.13-4-4.34V4h4Z" />
+    </symbol>
+    <symbol id="icon-watch" viewBox="0 0 24 24">
+      <path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM12 7V3M12 21v-4M7 21l-2-4M19 21l2-4M7 3 5 7M19 3l2 7" />
+    </symbol>
+    <symbol id="icon-diamond" viewBox="0 0 24 24">
+      <path d="M2.7 10.3 12 21l9.3-10.7M6 3h12l3 6H3l3-6ZM7 3l5 18M17 3l-5 18" />
+    </symbol>
+    <symbol id="icon-car" viewBox="0 0 24 24">
+      <path
+        d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12.4V16c0 .6.4 1 1 1h2M7 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM17 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM5 17h2M17 17h2M9 17h6M14 10H8l-1.5-3" />
+    </symbol>
+    <symbol id="icon-image" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+      <circle cx="8.5" cy="8.5" r="1.5" />
+      <polyline points="21 15 16 10 5 21" />
+    </symbol>
+    <symbol id="icon-urn" viewBox="0 0 24 24">
+      <path d="M12 2v2M8 12c-2 3-2 6 0 9h8c2-3 2-6 0-9M4 8c4 1 12 1 16 0M4 12V8a8 8 0 1 1 16 0v4M12 22v-2" />
+    </symbol>
+    <symbol id="icon-badge-check" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10ZM9 12l2 2 4-4" />
+    </symbol>
+    <symbol id="icon-microscope" viewBox="0 0 24 24">
+      <path
+        d="M6 18h8M3 22h18M14 22a7 7 0 1 0 0-14h-1M9 14h2M12 12a3 3 0 1 1-3 3M7 18V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+    </symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </symbol>
+    <symbol id="icon-dollar" viewBox="0 0 24 24">
+      <line x1="12" y1="1" x2="12" y2="23" />
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <polygon
+        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </symbol>
+    <symbol id="icon-edit" viewBox="0 0 24 24">
+      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5Z" />
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </symbol>
+    <symbol id="icon-wine" viewBox="0 0 24 24">
+      <path d="M8 22h8M12 11V22M7 3a5 5 0 0 1 10 0v5a5 5 0 0 1-10 0V3Z" />
+    </symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5a2.5 2.5 0 0 0-2.5 2.5V4.5Z" />
+    </symbol>
+    <symbol id="icon-guitar" viewBox="0 0 24 24">
+      <path
+        d="M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM13 13 9 18M18 13l-4-4M21 5l-3-3M13 13c1-2 4-5 6-4s2 4 0 6-5 1-6 0c-1-1-1-1-1-1M13 13l8 8" />
+    </symbol>
+    <symbol id="icon-museum" viewBox="0 0 24 24">
+      <path d="M16 22V10M8 22V10M3 22h18M2 10h20M12 2l9 6H3l9-6Z" />
+    </symbol>
+    <symbol id="icon-briefcase" viewBox="0 0 24 24">
+      <rect x="2" y="7" width="20" height="14" rx="2" />
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+    </symbol>
+    <symbol id="icon-camera" viewBox="0 0 24 24">
+      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+      <circle cx="12" cy="13" r="4" />
+    </symbol>
+    <symbol id="icon-mask" viewBox="0 0 24 24">
+      <path
+        d="M9 14h.01M15 14h.01M12 18c-3 0-4-1-4-1h8s-1 1-4 1ZM12 2c5 0 8 3 8 7v4c0 4-3 7-8 7s-8-3-8-7V9c0-4 3-7 8-7Z" />
+    </symbol>
+    <symbol id="icon-lightbulb" viewBox="0 0 24 24">
+      <path
+        d="M15 21H9M12 3a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V19a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7Z" />
+    </symbol>
+    <symbol id="icon-telescope" viewBox="0 0 24 24">
+      <path
+        d="m14 8 2.5 1.5M11 11l4.5 2.5M10.5 4 4 10.5a1.5 1.5 0 0 0 0 2.1l7.4 7.4a1.5 1.5 0 0 0 2.1 0L20 13.5M16 4l4 4M21 2l-3 3M9 22 5.5 17M17 5 5 17" />
+    </symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24">
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 21 2c-2.4 4-3 5.5-4.1 11.2A7 7 0 0 1 11 20Z" />
+      <path d="M11 20V12" />
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
+    </symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+      <line x1="19" y1="12" x2="5" y2="12" />
+      <polyline points="12 19 5 12 12 5" />
+    </symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24">
+      <path
+        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z" />
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </symbol>
+    <symbol id="icon-apple" viewBox="0 0 24 24">
+      <path
+        d="M12 20.94c1.88 0 3.05-1.07 4.64-1.07 1.52 0 2.34 1.02 4.5 1.02.26 0 .49-.15.58-.4.36-1.02 1.29-3.9 1.29-6.32 0-3.6-2.41-6.17-5.46-6.17-1.57 0-2.88.94-3.86.94-.97 0-2.43-.94-3.83-.94-3.23 0-6.14 2.89-6.14 7 0 2.42.92 5.59 1.48 7.15.2.56.44.8.8.8 1.28 0 2.22-.92 4-.92s2.61.94 4 1.02c.03.01.07.01.1.01ZM12 8c.37-3.22 3-5.22 3-5.22s-2.58.4-4.5 3.12C10.02 6.55 12 8 12 8Z" />
+    </symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24">
+      <polygon points="5 3 19 12 5 21 5 3" />
+    </symbol>
+    <symbol id="icon-map-pin" viewBox="0 0 24 24">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </symbol>
+    <symbol id="icon-tag" viewBox="0 0 24 24">
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+      <line x1="7" y1="7" x2="7.01" y2="7" />
+    </symbol>
+    <symbol id="icon-smartphone" viewBox="0 0 24 24">
+      <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+      <line x1="12" y1="18" x2="12.01" y2="18" />
+    </symbol>
+    <symbol id="icon-x-brand" viewBox="0 0 24 24">
+      <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768m2.464-2.464l6.768-6.768" />
+    </symbol>
+    <symbol id="icon-linkedin-brand" viewBox="0 0 24 24">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+      <circle cx="4" cy="4" r="2" />
+    </symbol>
+    <symbol id="icon-instagram-brand" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01" />
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24">
+      <path d="M18 6L6 18M6 6l12 12" />
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <polyline points="20 6 9 17 4 12" />
+    </symbol>
+  </svg>
+
+  <!-- ░░░ PAGE LOADER ░░░ -->
+  <div id="page-loader">
+    <div class="loader-logo">
+      <svg class="oaw-logo-svg" direction="ltr" width="120" height="50" viewBox="0 0 140 90"
+        xmlns="http://www.w3.org/2000/svg">
+        <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900"
+          fill="var(--gold)">OAW</text>
+        <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5"
+          stroke-linecap="square" />
+      </svg>
+    </div>
+  </div>
+
+  <div id="cursor-glow"></div>
+
+  <!-- ░░░ SITE HEADER ░░░ -->
+  <header id="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <!-- Logo -->
+        <a href="home1.html" class="site-logo">
+          <svg class="oaw-logo-svg" direction="ltr" width="90" height="40" viewBox="0 0 140 90"
+            xmlns="http://www.w3.org/2000/svg">
+            <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900"
+              fill="var(--gold)">OAW</text>
+            <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)" stroke-width="5"
+              stroke-linecap="square" />
+          </svg>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="desktop-nav" aria-label="Main navigation">
+
+          <!-- Home -->
+          <div class="nav-item">
+            <a href="home1.html" class="nav-link active" data-page="home1.html">
+              Home <span class="chevron">▾</span>
+            </a>
+            <div class="dropdown">
+              <a href="home1.html" class="dropdown-link active" data-page="home1.html">Home 1</a>
+              <a href="home2.html" class="dropdown-link" data-page="home2.html">Home 2</a>
+            </div>
+          </div>
+
+          <!-- About -->
+          <div class="nav-item">
+            <a href="about.html" class="nav-link" data-page="about.html">About</a>
+          </div>
+
+          <!-- Services -->
+          <div class="nav-item">
+            <a href="services.html" class="nav-link" data-page="services.html">Services</a>
+          </div>
+
+          <!-- Contact -->
+          <div class="nav-item">
+            <a href="contact.html" class="nav-link" data-page="contact.html">Contact</a>
+          </div>
+
+          <!-- Dashboard -->
+          <div class="nav-item">
+            <a href="#" class="nav-link">
+              Dashboard <span class="chevron">▾</span>
+            </a>
+            <div class="dropdown">
+              <a href="user-dashboard.html" class="dropdown-link" data-page="user-dashboard.html">User Dashboard</a>
+              <div class="dropdown-divider"></div>
+              <a href="admin-dashboard.html" class="dropdown-link" data-page="admin-dashboard.html">Admin Dashboard</a>
+            </div>
+          </div>
+
+        </nav>
+
+        <div class="header-right">
+          <!-- Live Status integrated in Header -->
+          <div class="live-status-header">
+            <span class="live-dot"></span>
+            <span class="live-text">Live Now</span>
+          </div>
+
+          <!-- Globe — click to toggle RTL/LTR -->
+          <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR" title="Switch to RTL"><svg width="20"
+              height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+              <path d="M2 12h20"></path>
+            </svg></button>
+
+          <a href="login.html" class="header-cta">LOGIN</a>
+
+          <!-- Mobile toggle -->
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ░░░ MOBILE NAV ░░░ -->
+  <nav id="mobile-nav" aria-label="Mobile navigation">
+
+    <div class="mobile-nav-item">
+      <a href="#" class="mobile-nav-link active" data-page="home1.html">
+        Home
+        <button class="mobile-dd-toggle" aria-label="Toggle home dropdown">▾</button>
+      </a>
+      <div class="mobile-dropdown">
+        <a href="home1.html" class="mobile-dd-link active" data-page="home1.html">Home 1</a>
+        <a href="home2.html" class="mobile-dd-link" data-page="home2.html">Home 2</a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-item">
+      <a href="about.html" class="mobile-nav-link" data-page="about.html">About</a>
+    </div>
+    <div class="mobile-nav-item">
+      <a href="services.html" class="mobile-nav-link" data-page="services.html">Services</a>
+    </div>
+    <div class="mobile-nav-item">
+      <a href="contact.html" class="mobile-nav-link" data-page="contact.html">Contact</a>
+    </div>
+
+    <div class="mobile-nav-item">
+      <a href="#" class="mobile-nav-link">
+        Dashboard
+        <button class="mobile-dd-toggle" aria-label="Toggle dashboard dropdown">▾</button>
+      </a>
+      <div class="mobile-dropdown">
+        <a href="user-dashboard.html" class="mobile-dd-link" data-page="user-dashboard.html">User Dashboard</a>
+        <a href="admin-dashboard.html" class="mobile-dd-link" data-page="admin-dashboard.html">Admin Dashboard</a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-bottom">
+      <a href="login.html" class="btn btn-primary" style="justify-content:center;"><svg class="icon icon-margin-r">
+          <use xlink:href="#icon-bolt"></use>
+        </svg> LOGIN</a>
+    </div>
+
+  </nav>
+
+  <button id="back-to-top" aria-label="Back to top"><svg class="icon icon-sm"
+      style="transform:rotate(-90deg); stroke:var(--navy);">
+      <use xlink:href="#icon-arrow-right"></use>
+    </svg></button>
+
+  <!-- ═══════════════════════════════════════
+     S1 — HERO
+════════════════════════════════════════ -->
+  <main>
+    <section id="s-hero">
+      <canvas id="particle-canvas"></canvas>
+      <div class="hero-bg"></div>
+      <div class="container" style="position:relative;z-index:2;width:100%;">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="script-white">Where</span> <span class="gold italic">Rare</span> <span
+              class="script-white">Finds</span><br>
+            <span class="script-white">Their True</span> <span class="gold">Value</span>
+          </h1>
+          <p class="hero-sub">
+            Discover extraordinary lots — luxury timepieces, masterwork paintings,
+            rare gemstones &amp; heritage automobiles. Bid with confidence on the world's
+            most trusted premium auction platform.
+          </p>
+          <div class="hero-btns">
+            <a href="#s-lots" class="btn btn-primary"><svg class="icon icon-margin-r">
+                <use xlink:href="#icon-bolt"></use>
+              </svg> Explore Auctions</a>
+            <a href="#s-how" class="btn btn-outline">How It Works</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-val" data-count="48200" data-suffix="+">0</div>
+              <div class="hero-stat-lbl">Total Lots Sold</div>
+            </div>
+            <div>
+              <div class="hero-stat-val" data-count="12400" data-suffix="+">0</div>
+              <div class="hero-stat-lbl">Registered Bidders</div>
+            </div>
+            <div>
+              <div class="hero-stat-val" data-count="98.7" data-suffix="%">0</div>
+              <div class="hero-stat-lbl">Satisfaction Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Floating bid card -->
+      <div class="hero-right">
+        <div class="hero-float-card">
+          <img src="images/luxury_watch.png" alt="Lot Preview" class="hero-card-img" />
+          <div class="hero-card-title">Patek Philippe Ref. 5270G</div>
+          <div class="hero-card-bid">
+            <div>
+              <div class="bid-label">Current Bid</div>
+              <div class="bid-amount">$84,500</div>
+            </div>
+            <div>
+              <div class="bid-label">Ends in</div>
+              <div style="display:flex;gap:4px;align-items:center" data-countdown="7200">
+                <span data-cd-h
+                  style="color:var(--white);font-family:var(--font-serif);font-weight:700;font-size:18px;">02</span>
+                <span style="color:var(--gold);font-weight:700;">:</span>
+                <span data-cd-m
+                  style="color:var(--white);font-family:var(--font-serif);font-weight:700;font-size:18px;">00</span>
+                <span style="color:var(--gold);font-weight:700;">:</span>
+                <span data-cd-s
+                  style="color:var(--white);font-family:var(--font-serif);font-weight:700;font-size:18px;">00</span>
+              </div>
+            </div>
+          </div>
+          <a href="#s-lots" class="lot-bid-btn" style="display:block;text-align:center;margin-top:16px;">Place Bid <svg
+              class="icon-sm icon-margin-l">
+              <use xlink:href="#icon-arrow-right"></use>
+            </svg></a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero-scroll">
+        <div class="scroll-wheel">
+          <div class="scroll-dot"></div>
+        </div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     S2 — TICKER
+════════════════════════════════════════ -->
+    <section id="s-ticker">
+      <div style="overflow:hidden;">
+        <div class="ticker-track">
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-bolt"></use>
+            </svg> Live Auction Now</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-trophy"></use>
+            </svg> Record Sale: $2.4M Picasso</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-watch"></use>
+            </svg> Rolex Daytona — Bidding Open</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-diamond"></use>
+            </svg> Pink Diamond — Reserve Met</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-car"></use>
+            </svg> 1962 Ferrari GTO — Ends Tonight</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-image"></use>
+            </svg> Monet Watercolour — New Lot</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-urn"></use>
+            </svg> Ming Dynasty Vase — Live Now</span>
+          <!-- duplicate for infinite loop -->
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-bolt"></use>
+            </svg> Live Auction Now</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-trophy"></use>
+            </svg> Record Sale: $2.4M Picasso</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-watch"></use>
+            </svg> Rolex Daytona — Bidding Open</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-diamond"></use>
+            </svg> Pink Diamond — Reserve Met</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-car"></use>
+            </svg> 1962 Ferrari GTO — Ends Tonight</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-image"></use>
+            </svg> Monet Watercolour — New Lot</span>
+          <span class="ticker-item"><span class="ticker-dot"></span> <svg class="icon icon-sm icon-margin-r">
+              <use xlink:href="#icon-urn"></use>
+            </svg> Ming Dynasty Vase — Live Now</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     S3 — FEATURED LOTS
+════════════════════════════════════════ -->
+    <section id="s-lots" class="section">
+      <div class="container">
+        <div class="text-center" data-anim="fade-up">
+          <div class="section-tag">Featured Lots</div>
+          <h2 class="section-title">Curated <span class="gold">Masterpieces</span></h2>
+          <p class="section-subtitle">Hand-selected by our expert appraisers — each piece verified, authenticated and
+            ready for bidding.</p>
+        </div>
+        <div class="lots-grid" data-stagger="fade-up">
+
+          <!-- Lot 1 -->
+          <div class="lot-card">
+            <div class="lot-img-wrap">
+              <img src="images/luxury_watch.png" alt="Luxury Watch" class="lot-img" />
+              <div class="lot-badge"><span class="live-dot"></span> Live</div>
+              <button class="lot-fav" aria-label="Favourite"><svg class="icon icon-sm">
+                  <use xlink:href="#icon-heart"></use>
+                </svg></button>
+            </div>
+            <div class="lot-body">
+              <div class="lot-cat">Horology</div>
+              <div class="lot-title">Patek Philippe Grand Complications</div>
+              <div class="lot-meta">
+                <div>
+                  <div class="lot-price-lbl">Current Bid</div>
+                  <div class="lot-price">$84,500</div>
+                </div>
+                <div data-countdown="10800">
+                  <div class="lot-price-lbl">Ends in</div>
+                  <div class="lot-cd">
+                    <span class="lot-cd-num" data-cd-h>03</span>
+                    <span class="lot-cd-sep">:</span>
+                    <span class="lot-cd-num" data-cd-m>00</span>
+                    <span class="lot-cd-sep">:</span>
+                    <span class="lot-cd-num" data-cd-s>00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lot-footer">
+              <span class="lot-bids">24 bids</span>
+              <button class="lot-bid-btn">Bid Now</button>
+            </div>
+          </div>
+
+          <!-- Lot 2 -->
+          <div class="lot-card">
+            <div class="lot-img-wrap">
+              <img src="images/fine_art.png" alt="Fine Art" class="lot-img" />
+              <div class="lot-badge"><span class="live-dot"></span> Live</div>
+              <button class="lot-fav" aria-label="Favourite">🤍</button>
+            </div>
+            <div class="lot-body">
+              <div class="lot-cat">Fine Art</div>
+              <div class="lot-title">Impressionist Oil — Garden at Giverny</div>
+              <div class="lot-meta">
+                <div>
+                  <div class="lot-price-lbl">Current Bid</div>
+                  <div class="lot-price">$218,000</div>
+                </div>
+                <div data-countdown="21600">
+                  <div class="lot-price-lbl">Ends in</div>
+                  <div class="lot-cd">
+                    <span class="lot-cd-num" data-cd-h>06</span>
+                    <span class="lot-cd-sep">:</span>
+                    <span class="lot-cd-num" data-cd-m>00</span>
+                    <span class="lot-cd-sep">:</span>
+                    <span class="lot-cd-num" data-cd-s>00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lot-footer">
+              <span class="lot-bids">57 bids</span>
+              <button class="lot-bid-btn">Bid Now</button>
+            </div>
+          </div>
+
+          <!-- Lot 3 -->
+          <div class="lot-card">
+            <div class="lot-img-wrap">
+              <img src="images/rare_diamond.png" alt="Rare Diamond" class="lot-img" />
+              <div class="lot-badge"><svg class="icon icon-sm icon-margin-r">
+                  <use xlink:href="#icon-clock"></use>
+                </svg> Closing Soon</div>
+              <button class="lot-fav" aria-label="Favourite">🤍</button>
+            </div>
+            <div class="lot-body">
+              <div class="lot-cat">Jewellery</div>
+              <div class="lot-title">Pink Argyle Diamond Necklace 18ct</div>
+              <div class="lot-meta">
+                <div>
+                  <div class="lot-price-lbl">Current Bid</div>
+                  <div class="lot-price">$560,000</div>
+                </div>
+                <div data-countdown="3600">
+                  <div class="lot-price-lbl">Ends in</div>
+                  <div class="lot-cd">
+                    <span class="lot-cd-num" data-cd-h>01</span>
+                    <span class="lot-cd-sep">:</span>
+                    <span class="lot-cd-num" data-cd-m>00</span>
+                    <span class="lot-cd-sep">:</span>
+                    <span class="lot-cd-num" data-cd-s>00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lot-footer">
+              <span class="lot-bids">103 bids</span>
+              <button class="lot-bid-btn">Bid Now</button>
+            </div>
+          </div>
+
+        </div><!-- /lots-grid -->
+        <div style="text-align:center;margin-top:44px;" data-anim="fade-up">
+          <a href="#s-live" class="btn btn-outline">View All Lots <svg class="icon-sm icon-margin-l">
+              <use xlink:href="#icon-arrow-right"></use>
+            </svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     S4 — HOW IT WORKS
+════════════════════════════════════════ -->
+    <section id="s-how" class="section" style="background:var(--navy-mid);">
+      <div class="container">
+        <div class="text-center" data-anim="fade-up">
+          <div class="section-tag">Process</div>
+          <h2 class="section-title">Bid in <span class="gold">4 Simple Steps</span></h2>
+          <p class="section-subtitle">Seamless. Secure. Sophisticated. Our auction process is designed for both
+            first-timers and seasoned collectors.</p>
+        </div>
+        <div class="steps-wrap">
+          <div class="step-card" data-anim="fade-up" data-delay="0">
+            <div class="step-num">1</div>
+            <div class="step-icon"><svg class="icon icon-lg icon-gold">
+                <use xlink:href="#icon-edit"></use>
+              </svg></div>
+            <h3 class="step-title">Register Free</h3>
+            <p class="step-desc">Create your account in minutes. Verify identity and unlock access to all live and
+              upcoming auctions.</p>
+          </div>
+          <div class="step-card" data-anim="fade-up" data-delay="1">
+            <div class="step-num">2</div>
+            <div class="step-icon"><svg class="icon icon-lg icon-gold">
+                <use xlink:href="#icon-search"></use>
+              </svg></div>
+            <h3 class="step-title">Browse Lots</h3>
+            <p class="step-desc">Explore thousands of authenticated items across art, jewellery, horology, wine, and
+              collector categories.</p>
+          </div>
+          <div class="step-card" data-anim="fade-up" data-delay="2">
+            <div class="step-num">3</div>
+            <div class="step-icon"><svg class="icon icon-lg icon-gold">
+                <use xlink:href="#icon-bolt"></use>
+              </svg></div>
+            <h3 class="step-title">Place Your Bid</h3>
+            <p class="step-desc">Bid live or set an automatic maximum — our system protects you with real-time updates
+              and outbid alerts.</p>
+          </div>
+          <div class="step-card" data-anim="fade-up" data-delay="3">
+            <div class="step-num">4</div>
+            <div class="step-icon"><svg class="icon icon-lg icon-gold">
+                <use xlink:href="#icon-trophy"></use>
+              </svg></div>
+            <h3 class="step-title">Win & Collect</h3>
+            <p class="step-desc">Pay securely, arrange white-glove shipping or collection, and receive your
+              authenticated certificate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S5 — CATEGORY MARQUEE -->
+    <section id="s-categories" class="section" style="background:var(--navy-mid);padding:60px 0;">
+      <div class="container text-center" data-anim="fade-up">
+        <div class="section-tag">Browse by Category</div>
+        <h2 class="section-title">Every <span class="gold">Passion</span>, One Platform</h2>
+      </div>
+      <div style="overflow:hidden;margin-top:40px;">
+        <div class="cat-scroll-row">
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-watch"></use>
+              </svg></span>Horology</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-image"></use>
+              </svg></span>Fine Art</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-diamond"></use>
+              </svg></span>Jewellery</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-car"></use>
+              </svg></span>Automobiles</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-wine"></use>
+              </svg></span>Fine Wine</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-urn"></use>
+              </svg></span>Antiques</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-book"></use>
+              </svg></span>Rare Books</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-guitar"></use>
+              </svg></span>Memorabilia</div>
+          <!-- dupe -->
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-watch"></use>
+              </svg></span>Horology</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-image"></use>
+              </svg></span>Fine Art</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-diamond"></use>
+              </svg></span>Jewellery</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-car"></use>
+              </svg></span>Automobiles</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-wine"></use>
+              </svg></span>Fine Wine</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-urn"></use>
+              </svg></span>Antiques</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-book"></use>
+              </svg></span>Rare Books</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-guitar"></use>
+              </svg></span>Memorabilia</div>
+        </div>
+        <div class="cat-scroll-row" style="margin-top:12px;">
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-museum"></use>
+              </svg></span>Sculpture</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-briefcase"></use>
+              </svg></span>Luxury Bags</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-trophy"></use>
+              </svg></span>Coins &amp; Medals</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-camera"></use>
+              </svg></span>Photography</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-mask"></use>
+              </svg></span>Decorative Arts</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-lightbulb"></use>
+              </svg></span>Design Icons</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-telescope"></use>
+              </svg></span>Scientific</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-leaf"></use>
+              </svg></span>Natural History</div>
+          <!-- dupe -->
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-museum"></use>
+              </svg></span>Sculpture</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-briefcase"></use>
+              </svg></span>Luxury Bags</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-trophy"></use>
+              </svg></span>Coins &amp; Medals</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-camera"></use>
+              </svg></span>Photography</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-mask"></use>
+              </svg></span>Decorative Arts</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-lightbulb"></use>
+              </svg></span>Design Icons</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-telescope"></use>
+              </svg></span>Scientific</div>
+          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
+                <use xlink:href="#icon-leaf"></use>
+              </svg></span>Natural History</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S6 — LIVE AUCTIONS -->
+    <section id="s-live" class="section">
+      <div class="container">
+        <div class="live-header" data-anim="fade-up">
+          <div>
+            <div class="section-tag">Right Now</div>
+            <h2 class="section-title">Live <span class="gold">Bidding</span></h2>
+          </div>
+          <a href="#" class="btn btn-outline" style="flex-shrink:0;">View All Live <svg class="icon-sm icon-margin-l">
+              <use xlink:href="#icon-arrow-right"></use>
+            </svg></a>
+        </div>
+        <div class="live-grid">
+          <div class="live-card" data-anim="fade-left">
+            <img src="images/auction_items.png" alt="Auction item" class="live-card-img" />
+            <div class="live-card-body">
+              <div class="live-card-cat"><span class="live-dot"></span> LIVE — Jewellery</div>
+              <div class="live-card-title">Sapphire &amp; Diamond Rivière Bracelet</div>
+              <div class="live-card-cd" data-countdown="5400">
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-h>01</div>
+                  <div class="live-cd-l">HRS</div>
+                </div>
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-m>30</div>
+                  <div class="live-cd-l">MIN</div>
+                </div>
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-s>00</div>
+                  <div class="live-cd-l">SEC</div>
+                </div>
+              </div>
+              <div class="live-card-footer">
+                <div class="live-price">$124,000</div>
+                <button class="live-small-btn">Bid</button>
+              </div>
+            </div>
+          </div>
+          <div class="live-card" data-anim="fade-right">
+            <img src="images/a1.jpg" alt="Fine Art" class="live-card-img" />
+            <div class="live-card-body">
+              <div class="live-card-cat"><span class="live-dot"></span> LIVE — Fine Art</div>
+              <div class="live-card-title">Abstract Expressionist — Oil on Canvas</div>
+              <div class="live-card-cd" data-countdown="9000">
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-h>02</div>
+                  <div class="live-cd-l">HRS</div>
+                </div>
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-m>30</div>
+                  <div class="live-cd-l">MIN</div>
+                </div>
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-s>00</div>
+                  <div class="live-cd-l">SEC</div>
+                </div>
+              </div>
+              <div class="live-card-footer">
+                <div class="live-price">$87,500</div>
+                <button class="live-small-btn">Bid</button>
+              </div>
+            </div>
+          </div>
+          <div class="live-card" data-anim="fade-left" data-delay="1">
+            <img src="images/a2.avif" alt="Watch" class="live-card-img" />
+            <div class="live-card-body">
+              <div class="live-card-cat"><span class="live-dot"></span> LIVE — Horology</div>
+              <div class="live-card-title">Audemars Piguet Royal Oak Offshore</div>
+              <div class="live-card-cd" data-countdown="14400">
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-h>04</div>
+                  <div class="live-cd-l">HRS</div>
+                </div>
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-m>00</div>
+                  <div class="live-cd-l">MIN</div>
+                </div>
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-s>00</div>
+                  <div class="live-cd-l">SEC</div>
+                </div>
+              </div>
+              <div class="live-card-footer">
+                <div class="live-price">$42,800</div>
+                <button class="live-small-btn">Bid</button>
+              </div>
+            </div>
+          </div>
+          <div class="live-card" data-anim="fade-right" data-delay="1">
+            <img src="images/a3.webp" alt="Diamond" class="live-card-img" />
+            <div class="live-card-body">
+              <div class="live-card-cat"><span class="live-dot"></span> LIVE — Gems</div>
+              <div class="live-card-title">Colombain Emerald Ring — 8.3ct</div>
+              <div class="live-card-cd" data-countdown="1800">
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-h>00</div>
+                  <div class="live-cd-l">HRS</div>
+                </div>
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-m>30</div>
+                  <div class="live-cd-l">MIN</div>
+                </div>
+                <div class="live-cd-box">
+                  <div class="live-cd-n" data-cd-s>00</div>
+                  <div class="live-cd-l">SEC</div>
+                </div>
+              </div>
+              <div class="live-card-footer">
+                <div class="live-price">$310,000</div>
+                <button class="live-small-btn">Bid</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S7 — STATS -->
+    <section id="s-stats" class="section">
+      <div class="stats-bg-num">OAW</div>
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="text-center" data-anim="scale" style="margin-bottom:56px;">
+          <div class="section-tag">By the Numbers</div>
+          <h2 class="section-title">Trusted by <span class="gold">Collectors</span> Worldwide</h2>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box" data-anim="fade-up" data-delay="0">
+            <div class="stat-icon"><svg class="icon icon-lg icon-gold">
+                <use xlink:href="#icon-trophy"></use>
+              </svg></div>
+            <div class="stat-num" data-count="48200" data-suffix="+">0</div>
+            <div class="stat-label">Lots Successfully Sold</div>
+          </div>
+          <div class="stat-box" data-anim="fade-up" data-delay="1">
+            <div class="stat-icon"><svg class="icon icon-lg icon-gold">
+                <use xlink:href="#icon-globe"></use>
+              </svg></div>
+            <div class="stat-num" data-count="142">0</div>
+            <div class="stat-label">Countries Represented</div>
+          </div>
+          <div class="stat-box" data-anim="fade-up" data-delay="2">
+            <div class="stat-icon"><svg class="icon icon-lg icon-gold">
+                <use xlink:href="#icon-dollar"></use>
+              </svg></div>
+            <div class="stat-num" data-prefix="$" data-count="2.4" data-suffix="B+">0</div>
+            <div class="stat-label">Total Auction Value</div>
+          </div>
+          <div class="stat-box" data-anim="fade-up" data-delay="3">
+            <div class="stat-icon"><svg class="icon icon-lg icon-gold">
+                <use xlink:href="#icon-star"></use>
+              </svg></div>
+            <div class="stat-num" data-count="98.7" data-suffix="%">0</div>
+            <div class="stat-label">Bidder Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S8 — TESTIMONIALS -->
+    <section id="s-testimonials" class="section" style="background:var(--navy-mid);">
+      <div class="container">
+        <div class="text-center" data-anim="fade-up">
+          <div class="section-tag">Testimonials</div>
+          <h2 class="section-title">What Our <span class="gold">Bidders</span> Say</h2>
+        </div>
+        <div class="testi-slider" data-anim="fade-up" data-delay="1">
+          <div class="testi-track">
+            <div class="testi-slide">
+              <div class="testi-card">
+                <div class="testi-quote">"</div>
+                <p class="testi-text">OAW completely transformed how I approach collecting. The provenance verification
+                  and expert appraisal service gave me absolute confidence bidding on a $400,000 Picasso. I won — and
+                  it's the centrepiece of my collection.</p>
+                <div class="testi-author">
+                  <div class="testi-avatar">JR</div>
+                  <div>
+                    <div class="testi-name">James Rothbury</div>
+                    <div class="testi-role">Private Collector, London</div>
+                    <div class="testi-stars">★★★★★</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi-slide">
+              <div class="testi-card">
+                <div class="testi-quote">"</div>
+                <p class="testi-text">The real-time bidding interface is faultless. I flew my entire collection through
+                  OAW — 14 pieces, every single one authenticated within 48 hours. The white-glove delivery was
+                  exceptional. This is the gold standard.</p>
+                <div class="testi-author">
+                  <div class="testi-avatar">SM</div>
+                  <div>
+                    <div class="testi-name">Sophia Marchetti</div>
+                    <div class="testi-role">Art Dealer, Milan</div>
+                    <div class="testi-stars">★★★★★</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi-slide">
+              <div class="testi-card">
+                <div class="testi-quote">"</div>
+                <p class="testi-text">As a watch aficionado for thirty years, I've used every major auction house. OAW's
+                  catalogue depth, condition reporting, and buyer protection puts them in a league of their own. My
+                  Patek arrived in perfect condition.</p>
+                <div class="testi-author">
+                  <div class="testi-avatar">HK</div>
+                  <div>
+                    <div class="testi-name">Henrik Karlsson</div>
+                    <div class="testi-role">Horological Collector, Stockholm</div>
+                    <div class="testi-stars">★★★★★</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-nav">
+            <div class="testi-dot active"></div>
+            <div class="testi-dot"></div>
+            <div class="testi-dot"></div>
+          </div>
+          <div class="testi-arrows">
+            <button class="testi-arrow testi-prev" aria-label="Previous"><svg class="icon icon-sm">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg></button>
+            <button class="testi-arrow testi-next" aria-label="Next"><svg class="icon icon-sm">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S9 — NEWSLETTER -->
+    <section id="s-newsletter" class="section">
+      <div class="container">
+        <div class="newsletter-box" data-anim="scale">
+          <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Insider Access</div>
+          <h2 class="newsletter-title">Stay Ahead of <span style="color:var(--gold);">Every Auction</span></h2>
+          <p class="newsletter-sub">Receive curated lot previews, expert insights and exclusive early-bidder access —
+            delivered directly to your inbox.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input class="newsletter-input" type="email" placeholder="Your email address" required
+              aria-label="Email address" />
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- S10 — PARTNERS -->
+    <section id="s-partners" class="section" style="background:var(--navy-mid);padding:70px 0;">
+      <div class="container">
+        <div class="partners-header" data-anim="fade-up">
+          <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Our Partners</div>
+          <h2 class="section-title">Trusted by <span class="gold">Global Institutions</span></h2>
+        </div>
+      </div>
+      <div style="overflow:hidden;margin-top:40px;">
+        <div class="partners-track">
+          <div class="partner-logo">SOTHEBY'S</div>
+          <div class="partner-logo">CHRISTIE'S</div>
+          <div class="partner-logo">PHILLIPS</div>
+          <div class="partner-logo">BONHAMS</div>
+          <div class="partner-logo">DOROTHEUM</div>
+          <div class="partner-logo">TAJAN</div>
+          <div class="partner-logo">HERITAGE</div>
+          <div class="partner-logo">RAGO</div>
+          <!-- dupe -->
+          <div class="partner-logo">SOTHEBY'S</div>
+          <div class="partner-logo">CHRISTIE'S</div>
+          <div class="partner-logo">PHILLIPS</div>
+          <div class="partner-logo">BONHAMS</div>
+          <div class="partner-logo">DOROTHEUM</div>
+          <div class="partner-logo">TAJAN</div>
+          <div class="partner-logo">HERITAGE</div>
+          <div class="partner-logo">RAGO</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S11 — AUCTION PROCESS -->
+    <section id="s-process" class="section">
+      <div class="container">
+        <div class="process-grid">
+          <div data-anim="fade-left">
+            <div class="section-tag">Deep Dive</div>
+            <h2 class="section-title">The OAW <span class="gold">Auction Journey</span></h2>
+            <p class="section-subtitle" style="margin-bottom:0;">From initial consignment to final gavel — every step is
+              managed by specialists with decades of experience.</p>
+          </div>
+          <div class="process-timeline" data-anim="fade-right">
+            <div class="process-item">
+              <div class="process-left">
+                <div class="process-circle">1</div>
+              </div>
+              <div class="process-right">
+                <h3 class="process-title">Consignment &amp; Valuation</h3>
+                <p class="process-desc">Submit your item. Our specialists provide a complimentary auction estimate
+                  within 5 business days.</p>
+              </div>
+            </div>
+            <div class="process-item">
+              <div class="process-left">
+                <div class="process-circle">2</div>
+              </div>
+              <div class="process-right">
+                <h3 class="process-title">Authentication &amp; Cataloguing</h3>
+                <p class="process-desc">Each lot is independently authenticated, photographed and described by category
+                  experts.</p>
+              </div>
+            </div>
+            <div class="process-item">
+              <div class="process-left">
+                <div class="process-circle">3</div>
+              </div>
+              <div class="process-right">
+                <h3 class="process-title">Pre-Sale Exhibition</h3>
+                <p class="process-desc">Lots are exhibited online and at our galleries so bidders can inspect in person
+                  before bidding.</p>
+              </div>
+            </div>
+            <div class="process-item">
+              <div class="process-left">
+                <div class="process-circle">4</div>
+              </div>
+              <div class="process-right">
+                <h3 class="process-title">Live Auction &amp; Settlement</h3>
+                <p class="process-desc">Bidding opens online. Payment and secure delivery handled within 14 days of the
+                  hammer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S12 — WHY CHOOSE US -->
+    <section id="s-why" class="section" style="background:var(--navy-mid);">
+      <div class="container">
+        <div class="why-grid">
+          <div data-anim="fade-left">
+            <div class="section-tag">Why OAW</div>
+            <h2 class="section-title">Built for <span class="gold">Serious</span> Collectors</h2>
+            <p class="section-subtitle" style="margin-bottom:36px;">Every feature, policy and person at OAW is dedicated
+              to one purpose: giving collectors confidence to bid boldly.</p>
+            <div class="why-features">
+              <div class="why-feat">
+                <div class="why-feat-icon"><svg class="icon icon-lg icon-gold">
+                    <use xlink:href="#icon-badge-check"></use>
+                  </svg></div>
+                <div>
+                  <div class="why-feat-title">Buyer Protection Guarantee</div>
+                  <div class="why-feat-desc">Every purchase is covered by our authenticity guarantee. If an item isn't
+                    as described, we refund in full.</div>
+                </div>
+              </div>
+              <div class="why-feat">
+                <div class="why-feat-icon"><svg class="icon icon-lg icon-gold">
+                    <use xlink:href="#icon-microscope"></use>
+                  </svg></div>
+                <div>
+                  <div class="why-feat-title">Expert Appraisal Team</div>
+                  <div class="why-feat-desc">200+ in-house specialists across 40 categories with an average of 22 years'
+                    experience.</div>
+                </div>
+              </div>
+              <div class="why-feat">
+                <div class="why-feat-icon"><svg class="icon icon-lg icon-gold">
+                    <use xlink:href="#icon-globe"></use>
+                  </svg></div>
+                <div>
+                  <div class="why-feat-title">Global Reach, Local Expertise</div>
+                  <div class="why-feat-desc">Offices in 28 cities. Seamless international bidding with multi-currency
+                    support and local shipping.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="why-img-stack" data-anim="fade-right">
+            <img src="images/auction_house.png" alt="Auction House" class="why-main-img" />
+            <div class="why-badge-float">
+              <div class="why-badge-num" data-count="28">0</div>
+              <div class="why-badge-text">Years of Excellence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S13 — GALLERY -->
+    <section id="s-gallery" class="section">
+      <div class="container">
+        <div class="text-center" data-anim="fade-up">
+          <div class="section-tag">Gallery</div>
+          <h2 class="section-title">A Glimpse of <span class="gold">Past Triumphs</span></h2>
+          <p class="section-subtitle">Browse standout lots from recent sales — every image tells a story of discovery,
+            desire and distinction.</p>
+        </div>
+        <div class="gallery-grid" style="margin-top:48px;">
+          <div class="gallery-item tall" data-anim="fade-up" data-delay="0">
+            <img src="images/a2.avif" alt="Auction Gallery" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-text">Evening Sale — London 2024</div>
+            </div>
+          </div>
+          <div class="gallery-item" data-anim="fade-up" data-delay="1">
+            <img src="images/a3.webp" alt="Auction Gallery" style="height:200px;width:100%;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-text">Patek Philippe — $84,500</div>
+            </div>
+          </div>
+          <div class="gallery-item" data-anim="fade-up" data-delay="2">
+            <img src="images/a4.webp" alt="Auction Gallery" style="height:200px;width:100%;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-text">Impressionist Oil — $218,000</div>
+            </div>
+          </div>
+          <div class="gallery-item wide" data-anim="fade-up" data-delay="3">
+            <img src="images/a5.webp" alt="Auction Gallery" style="height:200px;width:100%;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-text">Spring Collection — New York</div>
+            </div>
+          </div>
+          <div class="gallery-item" data-anim="fade-up" data-delay="4">
+            <img src="images/a6.jpg" alt="Auction Gallery" style="height:200px;width:100%;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-text">Pink Diamond — $560,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S14 — MEMBERSHIP PLANS -->
+    <section id="s-plans" class="section" style="background:var(--navy-mid);">
+      <div class="container">
+        <div class="text-center" data-anim="fade-up">
+          <div class="section-tag">Membership</div>
+          <h2 class="section-title">Choose Your <span class="gold">Access Level</span></h2>
+          <p class="section-subtitle">Every tier unlocks greater access, lower fees and premium concierge privileges.
+          </p>
+        </div>
+        <div class="plans-grid" style="margin-top:56px;">
+          <div class="plan-card" data-anim="fade-up" data-delay="0">
+            <div class="plan-name">Essential</div>
+            <div class="plan-price"><sup>$</sup>0</div>
+            <div class="plan-price-period">Forever free</div>
+            <ul class="plan-features">
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> Browse all catalogues</li>
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> Bid in standard sales</li>
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> Email notifications</li>
+              <li class="plan-feat-item"><span class="plan-feat-x"><svg class="icon icon-sm icon-margin-r"
+                    style="stroke:var(--muted); opacity:0.5;">
+                    <use xlink:href="#icon-x"></use>
+                  </svg></span> <span style="color:var(--muted)">Early
+                  access previews</span></li>
+              <li class="plan-feat-item"><span class="plan-feat-x"><svg class="icon icon-sm icon-margin-r"
+                    style="stroke:var(--muted); opacity:0.5;">
+                    <use xlink:href="#icon-x"></use>
+                  </svg></span> <span style="color:var(--muted)">Concierge
+                  support</span></li>
+            </ul>
+            <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started Free</a>
+          </div>
+          <div class="plan-card featured" data-anim="scale" data-delay="1">
+            <div class="plan-featured-tag">Most Popular</div>
+            <div class="plan-name">Collector</div>
+            <div class="plan-price"><sup>$</sup>49</div>
+            <div class="plan-price-period">per month</div>
+            <ul class="plan-features">
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg class="icon-sm icon-margin-r icon-gold"
+                    style="stroke-width:3;">
+                    <use xlink:href="#icon-badge-check"></use>
+                  </svg></span> Everything in Essential</li>
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> 48-hour early access</li>
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> Reduced buyer's premium</li>
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> Priority phone support</li>
+              <li class="plan-feat-item"><span class="plan-feat-x"><svg class="icon icon-sm icon-margin-r"
+                    style="stroke:var(--muted); opacity:0.5;">
+                    <use xlink:href="#icon-x"></use>
+                  </svg></span> <span style="color:var(--muted)">Private
+                  sale invitations</span></li>
+            </ul>
+            <a href="#" class="btn btn-primary" style="width:100%;justify-content:center;">Start Collecting</a>
+          </div>
+          <div class="plan-card" data-anim="fade-up" data-delay="2">
+            <div class="plan-name">Connoisseur</div>
+            <div class="plan-price"><sup>$</sup>199</div>
+            <div class="plan-price-period">per month</div>
+            <ul class="plan-features">
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> Everything in Collector</li>
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> Private sale invitations</li>
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> Dedicated art advisor</li>
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> Minimum buyer's premium</li>
+              <li class="plan-feat-item"><span class="plan-feat-check"><svg
+                    class="icon icon-sm icon-margin-r icon-gold">
+                    <use xlink:href="#icon-check"></use>
+                  </svg></span> VIP preview events</li>
+            </ul>
+            <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;">Go Connoisseur</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S15 — VIDEO HIGHLIGHT -->
+    <section id="s-highlight" class="section">
+      <div class="highlight-bg"></div>
+      <div class="highlight-content">
+        <div class="badge-gold" style="margin-bottom:24px;"><span class="live-dot"></span> Watch the Experience</div>
+        <button class="play-btn" id="play-btn" aria-label="Play video"><svg class="icon"
+            style="fill:currentColor;stroke:none;">
+            <use xlink:href="#icon-play"></use>
+          </svg></button>
+        <h2 class="highlight-title">The Art of the <span style="color:var(--gold)">Gavel</span></h2>
+        <p style="color:rgba(255,255,255,0.55);max-width:500px;margin:16px auto 0;font-size:16px;">Go behind the scenes
+          of a record-breaking evening sale with our award-winning auctioneers.</p>
+      </div>
+    </section>
+
+    <!-- S16 — RECENT RESULTS -->
+    <section id="s-results" class="section" style="background:var(--navy-mid);">
+      <div class="container">
+        <div class="text-center" data-anim="fade-up">
+          <div class="section-tag">Hammer Results</div>
+          <h2 class="section-title">Recent <span class="gold">Sale Results</span></h2>
+        </div>
+        <div class="results-table-wrap" data-anim="fade-up" data-delay="1">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Lot</th>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Estimate</th>
+                <th>Hammer Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="images/luxury_watch.png" class="results-lot-img" alt="Watch" /></td>
+                <td>Patek Philippe Grand Complications</td>
+                <td><span class="result-cat">Horology</span></td>
+                <td>$60,000–80,000</td>
+                <td style="color:var(--gold);font-weight:700;font-family:var(--font-serif)">$84,500</td>
+                <td><span class="result-sold"><svg class="icon-sm icon-margin-r">
+                      <use xlink:href="#icon-badge-check"></use>
+                    </svg> Sold</span></td>
+              </tr>
+              <tr>
+                <td><img src="images/fine_art.png" class="results-lot-img" alt="Art" /></td>
+                <td>Impressionist Oil — Garden at Giverny</td>
+                <td><span class="result-cat">Fine Art</span></td>
+                <td>$180,000–220,000</td>
+                <td style="color:var(--gold);font-weight:700;font-family:var(--font-serif)">$218,000</td>
+                <td><span class="result-sold"><svg class="icon-sm icon-margin-r">
+                      <use xlink:href="#icon-badge-check"></use>
+                    </svg> Sold</span></td>
+              </tr>
+              <tr>
+                <td><img src="images/rare_diamond.png" class="results-lot-img" alt="Diamond" /></td>
+                <td>Pink Argyle Diamond Necklace 18ct</td>
+                <td><span class="result-cat">Jewellery</span></td>
+                <td>$400,000–600,000</td>
+                <td style="color:var(--gold);font-weight:700;font-family:var(--font-serif)">$560,000</td>
+                <td><span class="result-sold"><svg class="icon-sm icon-margin-r">
+                      <use xlink:href="#icon-badge-check"></use>
+                    </svg> Sold</span></td>
+              </tr>
+              <tr>
+                <td><img src="images/auction_items.png" class="results-lot-img" alt="Items" /></td>
+                <td>Art Deco Sapphire Brooch</td>
+                <td><span class="result-cat">Jewellery</span></td>
+                <td>$20,000–30,000</td>
+                <td style="color:var(--gold);font-weight:700;font-family:var(--font-serif)">$38,200</td>
+                <td><span class="result-sold"><svg class="icon-sm icon-margin-r">
+                      <use xlink:href="#icon-badge-check"></use>
+                    </svg> Sold</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- S17 — FAQ -->
+    <section id="s-faq" class="section">
+      <div class="container">
+        <div class="text-center" data-anim="fade-up">
+          <div class="section-tag">FAQ</div>
+          <h2 class="section-title">Common <span class="gold">Questions</span></h2>
+        </div>
+        <div class="faq-grid" style="margin-top:56px;">
+          <div>
+            <div class="faq-item" data-anim="fade-left">
+              <div class="faq-q"><span>How do I register to bid?</span><span class="faq-icon">+</span></div>
+              <div class="faq-a">Create a free account, complete identity verification and add a payment method.
+                Registration takes under 5 minutes.</div>
+            </div>
+            <div class="faq-item" data-anim="fade-left" data-delay="1">
+              <div class="faq-q"><span>Is buyer authentication guaranteed?</span><span class="faq-icon">+</span></div>
+              <div class="faq-a">Yes. Every lot is independently authenticated before listing. All purchases include a
+                certificate of authenticity and are covered by our full money-back guarantee.</div>
+            </div>
+            <div class="faq-item" data-anim="fade-left" data-delay="2">
+              <div class="faq-q"><span>What currencies can I bid in?</span><span class="faq-icon">+</span></div>
+              <div class="faq-a">We support USD, EUR, GBP, JPY, CHF, AED and 40+ additional currencies. All bids are
+                displayed in your selected currency in real time.</div>
+            </div>
+          </div>
+          <div>
+            <div class="faq-item" data-anim="fade-right">
+              <div class="faq-q"><span>How is secure payment handled?</span><span class="faq-icon">+</span></div>
+              <div class="faq-a">Payments are processed through PCI-DSS Level 1 certified gateways. We accept wire
+                transfer, credit card and cryptocurrency for high-value lots.</div>
+            </div>
+            <div class="faq-item" data-anim="fade-right" data-delay="1">
+              <div class="faq-q"><span>Can I sell items through OAW?</span><span class="faq-icon">+</span></div>
+              <div class="faq-a">Absolutely. Submit your item via our Consign page. Our specialists will provide a
+                complimentary estimate within 5 working days and guide you through the entire process.</div>
+            </div>
+            <div class="faq-item" data-anim="fade-right" data-delay="2">
+              <div class="faq-q"><span>What shipping options are available?</span><span class="faq-icon">+</span></div>
+              <div class="faq-a">We partner with specialist fine art shippers offering white-glove, fully insured
+                door-to-door delivery worldwide. Local collection from our galleries is also available.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S18 — APP DOWNLOAD -->
+    <section id="s-app" class="section" style="background:var(--navy-mid);">
+      <div class="container">
+        <div class="app-grid">
+          <div data-anim="fade-left">
+            <div class="section-tag">Mobile App</div>
+            <h2 class="section-title">Bid Anywhere, <span class="gold">Anytime</span></h2>
+            <p class="section-subtitle" style="margin-bottom:40px;">Our award-winning app brings the full power of OAW
+              to your pocket — live bidding, outbid alerts, and instant lot previews.</p>
+            <div class="app-btns">
+              <a href="#" class="app-store-btn">
+                <div class="app-store-icon"><svg class="icon icon-lg">
+                    <use xlink:href="#icon-apple"></use>
+                  </svg></div>
+                <div>
+                  <div class="app-store-sub">Download on the</div>
+                  <div class="app-store-name">App Store</div>
+                </div>
+              </a>
+              <a href="#" class="app-store-btn">
+                <div class="app-store-icon"><svg class="icon icon-lg">
+                    <use xlink:href="#icon-play"></use>
+                  </svg></div>
+                <div>
+                  <div class="app-store-sub">Get it on</div>
+                  <div class="app-store-name">Google Play</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="app-mockup" data-anim="flip">
+            <img src="images/app.png" alt="OAW Mobile App" style="max-height: 85%; width: auto; position: relative; z-index: 1; animation: heroCardFloat 3s ease-in-out infinite;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S19 — UPCOMING AUCTIONS -->
+    <section id="s-upcoming" class="section">
+      <div class="container">
+        <div class="text-center" data-anim="fade-up">
+          <div class="section-tag">Coming Soon</div>
+          <h2 class="section-title">Upcoming <span class="gold">Sale Dates</span></h2>
+          <p class="section-subtitle">Mark your calendar. Pre-register now to receive exclusive early-access previews.
+          </p>
+        </div>
+        <div class="upcoming-grid">
+          <div class="upcoming-card" data-anim="fade-up" data-delay="0">
+            <div class="upcoming-header">
+              <div class="upcoming-date">28</div>
+              <div class="upcoming-month">March 2026</div>
+            </div>
+            <div class="upcoming-body">
+              <div class="upcoming-title">Important Watches &amp; Clocks</div>
+              <div class="upcoming-meta">
+                <div class="upcoming-meta-item"><svg class="icon-sm icon-margin-r">
+                    <use xlink:href="#icon-map-pin"></use>
+                  </svg> London</div>
+                <div class="upcoming-meta-item"><svg class="icon-sm icon-margin-r">
+                    <use xlink:href="#icon-clock"></use>
+                  </svg> 2:00 PM GMT</div>
+                <div class="upcoming-meta-item"><svg class="icon-sm icon-margin-r">
+                    <use xlink:href="#icon-tag"></use>
+                  </svg> 142 Lots</div>
+              </div>
+              <a href="#" class="btn btn-outline" style="margin-top:20px;font-size:12px;">Pre-Register <svg
+                  class="icon-sm icon-margin-l">
+                  <use xlink:href="#icon-arrow-right"></use>
+                </svg></a>
+            </div>
+          </div>
+          <div class="upcoming-card" data-anim="fade-up" data-delay="1">
+            <div class="upcoming-header">
+              <div class="upcoming-date">05</div>
+              <div class="upcoming-month">April 2026</div>
+            </div>
+            <div class="upcoming-body">
+              <div class="upcoming-title">Post-War &amp; Contemporary Art</div>
+              <div class="upcoming-meta">
+                <div class="upcoming-meta-item"><svg class="icon-sm icon-margin-r">
+                    <use xlink:href="#icon-map-pin"></use>
+                  </svg> New York</div>
+                <div class="upcoming-meta-item"><svg class="icon-sm icon-margin-r">
+                    <use xlink:href="#icon-clock"></use>
+                  </svg> 7:00 PM EST</div>
+                <div class="upcoming-meta-item"><svg class="icon-sm icon-margin-r">
+                    <use xlink:href="#icon-tag"></use>
+                  </svg> 98 Lots</div>
+              </div>
+              <a href="#" class="btn btn-outline" style="margin-top:20px;font-size:12px;">Pre-Register <svg
+                  class="icon-sm icon-margin-l">
+                  <use xlink:href="#icon-arrow-right"></use>
+                </svg></a>
+            </div>
+          </div>
+          <div class="upcoming-card" data-anim="fade-up" data-delay="2">
+            <div class="upcoming-header">
+              <div class="upcoming-date">18</div>
+              <div class="upcoming-month">April 2026</div>
+            </div>
+            <div class="upcoming-body">
+              <div class="upcoming-title">Maharaja Jewels &amp; Imperial Gems</div>
+              <div class="upcoming-meta">
+                <div class="upcoming-meta-item"><svg class="icon-sm icon-margin-r">
+                    <use xlink:href="#icon-map-pin"></use>
+                  </svg> Dubai</div>
+                <div class="upcoming-meta-item"><svg class="icon-sm icon-margin-r">
+                    <use xlink:href="#icon-clock"></use>
+                  </svg> 6:00 PM GST</div>
+                <div class="upcoming-meta-item"><svg class="icon-sm icon-margin-r">
+                    <use xlink:href="#icon-tag"></use>
+                  </svg> 76 Lots</div>
+              </div>
+              <a href="#" class="btn btn-outline" style="margin-top:20px;font-size:12px;">Pre-Register <svg
+                  class="icon-sm icon-margin-l">
+                  <use xlink:href="#icon-arrow-right"></use>
+                </svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S20 — CTA BANNER -->
+    <section id="s-cta">
+      <div class="cta-glow-ring"></div>
+      <div class="cta-glow-ring"></div>
+      <div class="cta-glow-ring"></div>
+      <div class="cta-content">
+        <div class="badge-gold" style="margin-bottom:28px;"><svg class="icon-sm icon-margin-r">
+            <use xlink:href="#icon-bolt"></use>
+          </svg> Join 12,400+ Collectors</div>
+        <h2 class="cta-title">Ready to Discover<br>Your Next <span class="gold">Masterpiece?</span></h2>
+        <p class="cta-sub">Create your free account today and unlock access to thousands of authenticated lots from
+          around the world.</p>
+        <div class="cta-btns">
+          <a href="#" class="btn btn-primary" style="font-size:15px;padding:16px 40px;"><svg class="icon icon-margin-r">
+              <use xlink:href="#icon-bolt"></use>
+            </svg> Start Bidding Free</a>
+          <a href="#s-how" class="btn btn-outline" style="font-size:15px;padding:16px 40px;">How It Works</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer style="background:#000000;border-top:1px solid var(--border);padding:60px 0 30px;">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="home1.html" class="site-logo" style="margin-bottom:20px;display:inline-flex;">
+            <svg class="oaw-logo-svg" direction="ltr" width="90" height="40" viewBox="0 0 140 90"
+              xmlns="http://www.w3.org/2000/svg">
+              <text x="6" y="66" font-family="var(--font-serif), serif" font-size="62" font-weight="900"
+                fill="var(--gold)">OAW</text>
+              <path d="M 66 28 L 66 14 L 138 6 L 138 84 L 66 76 L 66 62" fill="none" stroke="var(--gold)"
+                stroke-width="5" stroke-linecap="square" />
+            </svg>
+          </a>
+          <p style="color:var(--muted);font-size:14px;line-height:1.8;max-width:300px;margin-top:16px;">The world's most
+            trusted premium online auction platform. Connecting collectors with extraordinary objects since 1996.</p>
+        </div>
+        <div>
+          <div
+            style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">
+            Navigation</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="home1.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;"
+              onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Home</a>
+            <a href="about.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;"
+              onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">About</a>
+            <a href="services.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;"
+              onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Services</a>
+            <a href="contact.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;"
+              onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div
+            style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">
+            Dashboards</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="user-dashboard.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;"
+              onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">User
+              Dashboard</a>
+            <a href="admin-dashboard.html" style="color:var(--muted);font-size:14px;transition:color 0.2s;"
+              onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Admin
+              Dashboard</a>
+          </div>
+        </div>
+        <div>
+          <div
+            style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">
+            Connect</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="#"
+              style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.2s;"
+              onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+              onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'"><svg
+                class="icon icon-sm">
+                <use xlink:href="#icon-x-brand"></use>
+              </svg></a>
+            <a href="#"
+              style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.2s;"
+              onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+              onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'"><svg
+                class="icon icon-sm">
+                <use xlink:href="#icon-linkedin-brand"></use>
+              </svg></a>
+            <a href="#"
+              style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;transition:all 0.2s;"
+              onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+              onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'"><svg
+                class="icon icon-sm">
+                <use xlink:href="#icon-instagram-brand"></use>
+              </svg></a>
+          </div>
+        </div>
+      </div>
+      <div
+        style="border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <p style="color:var(--muted);font-size:13px;">© 2026 Online Auction World. All rights reserved.</p>
+        <p style="color:var(--muted);font-size:13px;">Designed with ♥ for collectors worldwide</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/header.js"></script>
+  <script src="js/home1.js"></script>
+</body>
+
+</html>
