@@ -121,7 +121,13 @@
           </div>
         </div>
 
-        <a href="login.html" class="header-cta btn">LOGIN</a>
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <a href="login.html" class="header-cta btn desktop-only">LOGIN</a>
 
         <!-- Mobile toggle -->
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -170,8 +176,10 @@
     </div>
   </div>
 
-  <div class="mobile-nav-bottom">
-    <a href="login.html" class="btn btn-primary" style="justify-content:center;">LOGIN</a>
+  <div class="mobile-nav-item" style="margin-top: auto;">
+    <a href="login.html" class="mobile-nav-link" style="color: var(--gold); border: 1px solid var(--gold); border-radius: 4px; text-align: center; justify-content: center;">
+      LOGIN
+    </a>
   </div>
 
 </nav>

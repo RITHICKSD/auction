@@ -143,6 +143,12 @@ body[dir="rtl"] .nav-badge {
   border-color: var(--gold);
 }
 
+/* Sidebar Theme Toggle specific (Icon-only) */
+.sidebar-globe-btn .sun-icon { display: none; }
+.sidebar-globe-btn .moon-icon { display: block; }
+.light-theme .sidebar-globe-btn .sun-icon { display: block; }
+.light-theme .sidebar-globe-btn .moon-icon { display: none; }
+
 /* Mobile sidebar toggle */
 .sidebar-toggle {
   display: none;

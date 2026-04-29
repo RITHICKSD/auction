@@ -9,6 +9,7 @@
    <link rel="stylesheet" href="css/header.css" />
    <link rel="stylesheet" href="css/home2.css" />
    <link rel="icon" type="image/png" href="images/favicon.png" />
+   <script src="js/theme.js"></script>
 </head>
 
 <body>
@@ -247,13 +248,7 @@
                </nav>
 
                <div class="header-right">
-                  <!-- Live Status integrated in Header -->
-                  <div class="live-status-header">
-                     <span class="live-dot"></span>
-                     <span class="live-text">Live Now</span>
-                  </div>
 
-                  <!-- Globe — click to toggle RTL/LTR -->
                   <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR" title="Switch to RTL"><svg width="20"
                         height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -263,7 +258,13 @@
                         <path d="M2 12h20"></path>
                      </svg></button>
 
-                  <a href="login.html" class="header-cta">LOGIN</a>
+                  <!-- Theme Toggle -->
+                  <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+                     <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                     <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                  </button>
+
+                  <a href="login.html" class="header-cta desktop-only">LOGIN</a>
 
                   <!-- Mobile toggle -->
                   <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -309,10 +310,10 @@
             </div>
          </div>
 
-         <div class="mobile-nav-bottom">
-            <a href="login.html" class="btn btn-primary" style="justify-content:center;"><svg class="icon icon-margin-r">
-                  <use xlink:href="#icon-bolt"></use>
-               </svg> LOGIN</a>
+         <div class="mobile-nav-item" style="margin-top: auto;">
+            <a href="login.html" class="mobile-nav-link" style="color: var(--gold); border: 1px solid var(--gold); border-radius: 4px; text-align: center; justify-content: center;">
+               LOGIN
+            </a>
          </div>
 
       </nav>
@@ -609,16 +610,6 @@
             </div>
          </section>
 
-         <!-- S8: DISCRETION (BG FOCUS) -->
-         <section class="h2-section" style="background:#000000;">
-            <div class="container text-center">
-               <div data-anim="scale">
-                  <h2 class="section-title">Discretion is our <span class="gold">North Star</span></h2>
-                  <p class="section-subtitle">OAW Private Office manages the confidential needs of royal houses and
-                     private institutions.</p>
-               </div>
-            </div>
-         </section>
 
          <!-- S9: HIGHLIGHTS -->
          <section class="h2-section">

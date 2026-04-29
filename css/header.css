@@ -375,9 +375,18 @@ body[dir="rtl"] #mobile-nav.open { transform: translateX(0); }
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .desktop-nav { display: none; }
-  .header-cta  { display: none; }
+  .header-cta.desktop-only { display: none; }
   .mobile-menu-btn { display: flex; }
 }
 @media (max-width: 768px) {
   .logo-subtitle { display: none; }
+}
+
+.desktop-only {
+  display: flex;
+}
+@media (max-width: 1024px) {
+  .desktop-only {
+    display: none !important;
+  }
 }

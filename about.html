@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/about.css" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
+  <script src="js/theme.js"></script>
 </head>
 <body>
 
@@ -173,16 +174,17 @@
       </nav>
 
       <div class="header-right">
-        <!-- Live Status integrated in Header -->
-        <div class="live-status-header">
-          <span class="live-dot"></span>
-          <span class="live-text">Live Now</span>
-        </div>
 
         <!-- Globe — click to toggle RTL/LTR -->
         <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR" title="Switch to RTL"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg></button>
 
-        <a href="login.html" class="header-cta">LOGIN</a>
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <a href="login.html" class="header-cta desktop-only">LOGIN</a>
 
         <!-- Mobile toggle -->
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -229,11 +231,8 @@
     </div>
   </div>
 
-  <div class="mobile-nav-bottom">
-    <a href="login.html" class="btn btn-primary" style="justify-content:center;">
-      <svg class="icon icon-margin-r">
-        <use xlink:href="#icon-bolt"></use>
-      </svg>
+  <div class="mobile-nav-item" style="margin-top: auto;">
+    <a href="login.html" class="mobile-nav-link" style="color: var(--gold); border: 1px solid var(--gold); border-radius: 4px; text-align: center; justify-content: center;">
       LOGIN
     </a>
   </div>
@@ -408,31 +407,6 @@
     </div>
   </section>
 
-  <!-- S7 — GLOBAL PRESENCE -->
-  <section class="section">
-    <div class="container">
-      <div class="presence-box" data-anim="fade-up" style="margin-bottom:24px;">
-         <div class="presence-text">
-            <h2 class="section-title">Where We <span class="gold">Reside</span></h2>
-            <p>With specialist bureaus across 14 cities, OAW provides local expertise on a global scale.</p>
-         </div>
-      </div>
-      <div class="phil-grid">
-         <div class="phil-card" data-anim="fade-up">
-            <h3>Zurich HQ</h3>
-            <p>Our secure vaults and primary authentication center for rare gems.</p>
-         </div>
-         <div class="phil-card" data-anim="fade-up" data-delay="0.1">
-            <h3>Dubai Hub</h3>
-            <p>Middle Eastern hub for hypercars and specialized estate services.</p>
-         </div>
-         <div class="phil-card" data-anim="fade-up" data-delay="0.2">
-            <h3>Hong Kong</h3>
-            <p>Gatekeeper for the Asian market, specializing in Ming-era ceramics.</p>
-         </div>
-      </div>
-    </div>
-  </section>
 
   <!-- S8 — CLIENT PORTRAITS -->
   <section class="section bg-mid">

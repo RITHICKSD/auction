@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/home1.css" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
+  <script src="js/theme.js"></script>
 </head>
 
 <body>
@@ -240,13 +241,7 @@
         </nav>
 
         <div class="header-right">
-          <!-- Live Status integrated in Header -->
-          <div class="live-status-header">
-            <span class="live-dot"></span>
-            <span class="live-text">Live Now</span>
-          </div>
 
-          <!-- Globe — click to toggle RTL/LTR -->
           <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR" title="Switch to RTL"><svg width="20"
               height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
@@ -256,7 +251,13 @@
               <path d="M2 12h20"></path>
             </svg></button>
 
-          <a href="login.html" class="header-cta">LOGIN</a>
+          <!-- Theme Toggle -->
+          <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+
+          <a href="login.html" class="header-cta desktop-only">LOGIN</a>
 
           <!-- Mobile toggle -->
           <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -303,10 +304,10 @@
       </div>
     </div>
 
-    <div class="mobile-nav-bottom">
-      <a href="login.html" class="btn btn-primary" style="justify-content:center;"><svg class="icon icon-margin-r">
-          <use xlink:href="#icon-bolt"></use>
-        </svg> LOGIN</a>
+    <div class="mobile-nav-item" style="margin-top: auto;">
+      <a href="login.html" class="mobile-nav-link" style="color: var(--gold); border: 1px solid var(--gold); border-radius: 4px; text-align: center; justify-content: center;">
+        LOGIN
+      </a>
     </div>
 
   </nav>
@@ -627,117 +628,6 @@
       </div>
     </section>
 
-    <!-- S5 — CATEGORY MARQUEE -->
-    <section id="s-categories" class="section" style="background:var(--navy-mid);padding:60px 0;">
-      <div class="container text-center" data-anim="fade-up">
-        <div class="section-tag">Browse by Category</div>
-        <h2 class="section-title">Every <span class="gold">Passion</span>, One Platform</h2>
-      </div>
-      <div style="overflow:hidden;margin-top:40px;">
-        <div class="cat-scroll-row">
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-watch"></use>
-              </svg></span>Horology</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-image"></use>
-              </svg></span>Fine Art</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-diamond"></use>
-              </svg></span>Jewellery</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-car"></use>
-              </svg></span>Automobiles</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-wine"></use>
-              </svg></span>Fine Wine</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-urn"></use>
-              </svg></span>Antiques</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-book"></use>
-              </svg></span>Rare Books</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-guitar"></use>
-              </svg></span>Memorabilia</div>
-          <!-- dupe -->
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-watch"></use>
-              </svg></span>Horology</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-image"></use>
-              </svg></span>Fine Art</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-diamond"></use>
-              </svg></span>Jewellery</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-car"></use>
-              </svg></span>Automobiles</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-wine"></use>
-              </svg></span>Fine Wine</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-urn"></use>
-              </svg></span>Antiques</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-book"></use>
-              </svg></span>Rare Books</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-guitar"></use>
-              </svg></span>Memorabilia</div>
-        </div>
-        <div class="cat-scroll-row" style="margin-top:12px;">
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-museum"></use>
-              </svg></span>Sculpture</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-briefcase"></use>
-              </svg></span>Luxury Bags</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-trophy"></use>
-              </svg></span>Coins &amp; Medals</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-camera"></use>
-              </svg></span>Photography</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-mask"></use>
-              </svg></span>Decorative Arts</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-lightbulb"></use>
-              </svg></span>Design Icons</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-telescope"></use>
-              </svg></span>Scientific</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-leaf"></use>
-              </svg></span>Natural History</div>
-          <!-- dupe -->
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-museum"></use>
-              </svg></span>Sculpture</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-briefcase"></use>
-              </svg></span>Luxury Bags</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-trophy"></use>
-              </svg></span>Coins &amp; Medals</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-camera"></use>
-              </svg></span>Photography</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-mask"></use>
-              </svg></span>Decorative Arts</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-lightbulb"></use>
-              </svg></span>Design Icons</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-telescope"></use>
-              </svg></span>Scientific</div>
-          <div class="cat-pill"><span class="cat-pill-icon"><svg class="icon icon-sm">
-                <use xlink:href="#icon-leaf"></use>
-              </svg></span>Natural History</div>
-        </div>
-      </div>
-    </section>
 
     <!-- S6 — LIVE AUCTIONS -->
     <section id="s-live" class="section">
@@ -897,80 +787,6 @@
       </div>
     </section>
 
-    <!-- S8 — TESTIMONIALS -->
-    <section id="s-testimonials" class="section" style="background:var(--navy-mid);">
-      <div class="container">
-        <div class="text-center" data-anim="fade-up">
-          <div class="section-tag">Testimonials</div>
-          <h2 class="section-title">What Our <span class="gold">Bidders</span> Say</h2>
-        </div>
-        <div class="testi-slider" data-anim="fade-up" data-delay="1">
-          <div class="testi-track">
-            <div class="testi-slide">
-              <div class="testi-card">
-                <div class="testi-quote">"</div>
-                <p class="testi-text">OAW completely transformed how I approach collecting. The provenance verification
-                  and expert appraisal service gave me absolute confidence bidding on a $400,000 Picasso. I won — and
-                  it's the centrepiece of my collection.</p>
-                <div class="testi-author">
-                  <div class="testi-avatar">JR</div>
-                  <div>
-                    <div class="testi-name">James Rothbury</div>
-                    <div class="testi-role">Private Collector, London</div>
-                    <div class="testi-stars">★★★★★</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi-slide">
-              <div class="testi-card">
-                <div class="testi-quote">"</div>
-                <p class="testi-text">The real-time bidding interface is faultless. I flew my entire collection through
-                  OAW — 14 pieces, every single one authenticated within 48 hours. The white-glove delivery was
-                  exceptional. This is the gold standard.</p>
-                <div class="testi-author">
-                  <div class="testi-avatar">SM</div>
-                  <div>
-                    <div class="testi-name">Sophia Marchetti</div>
-                    <div class="testi-role">Art Dealer, Milan</div>
-                    <div class="testi-stars">★★★★★</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi-slide">
-              <div class="testi-card">
-                <div class="testi-quote">"</div>
-                <p class="testi-text">As a watch aficionado for thirty years, I've used every major auction house. OAW's
-                  catalogue depth, condition reporting, and buyer protection puts them in a league of their own. My
-                  Patek arrived in perfect condition.</p>
-                <div class="testi-author">
-                  <div class="testi-avatar">HK</div>
-                  <div>
-                    <div class="testi-name">Henrik Karlsson</div>
-                    <div class="testi-role">Horological Collector, Stockholm</div>
-                    <div class="testi-stars">★★★★★</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testi-nav">
-            <div class="testi-dot active"></div>
-            <div class="testi-dot"></div>
-            <div class="testi-dot"></div>
-          </div>
-          <div class="testi-arrows">
-            <button class="testi-arrow testi-prev" aria-label="Previous"><svg class="icon icon-sm">
-                <use xlink:href="#icon-arrow-left"></use>
-              </svg></button>
-            <button class="testi-arrow testi-next" aria-label="Next"><svg class="icon icon-sm">
-                <use xlink:href="#icon-arrow-right"></use>
-              </svg></button>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- S9 — NEWSLETTER -->
     <section id="s-newsletter" class="section">
@@ -1173,188 +989,8 @@
       </div>
     </section>
 
-    <!-- S14 — MEMBERSHIP PLANS -->
-    <section id="s-plans" class="section" style="background:var(--navy-mid);">
-      <div class="container">
-        <div class="text-center" data-anim="fade-up">
-          <div class="section-tag">Membership</div>
-          <h2 class="section-title">Choose Your <span class="gold">Access Level</span></h2>
-          <p class="section-subtitle">Every tier unlocks greater access, lower fees and premium concierge privileges.
-          </p>
-        </div>
-        <div class="plans-grid" style="margin-top:56px;">
-          <div class="plan-card" data-anim="fade-up" data-delay="0">
-            <div class="plan-name">Essential</div>
-            <div class="plan-price"><sup>$</sup>0</div>
-            <div class="plan-price-period">Forever free</div>
-            <ul class="plan-features">
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> Browse all catalogues</li>
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> Bid in standard sales</li>
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> Email notifications</li>
-              <li class="plan-feat-item"><span class="plan-feat-x"><svg class="icon icon-sm icon-margin-r"
-                    style="stroke:var(--muted); opacity:0.5;">
-                    <use xlink:href="#icon-x"></use>
-                  </svg></span> <span style="color:var(--muted)">Early
-                  access previews</span></li>
-              <li class="plan-feat-item"><span class="plan-feat-x"><svg class="icon icon-sm icon-margin-r"
-                    style="stroke:var(--muted); opacity:0.5;">
-                    <use xlink:href="#icon-x"></use>
-                  </svg></span> <span style="color:var(--muted)">Concierge
-                  support</span></li>
-            </ul>
-            <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started Free</a>
-          </div>
-          <div class="plan-card featured" data-anim="scale" data-delay="1">
-            <div class="plan-featured-tag">Most Popular</div>
-            <div class="plan-name">Collector</div>
-            <div class="plan-price"><sup>$</sup>49</div>
-            <div class="plan-price-period">per month</div>
-            <ul class="plan-features">
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg class="icon-sm icon-margin-r icon-gold"
-                    style="stroke-width:3;">
-                    <use xlink:href="#icon-badge-check"></use>
-                  </svg></span> Everything in Essential</li>
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> 48-hour early access</li>
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> Reduced buyer's premium</li>
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> Priority phone support</li>
-              <li class="plan-feat-item"><span class="plan-feat-x"><svg class="icon icon-sm icon-margin-r"
-                    style="stroke:var(--muted); opacity:0.5;">
-                    <use xlink:href="#icon-x"></use>
-                  </svg></span> <span style="color:var(--muted)">Private
-                  sale invitations</span></li>
-            </ul>
-            <a href="#" class="btn btn-primary" style="width:100%;justify-content:center;">Start Collecting</a>
-          </div>
-          <div class="plan-card" data-anim="fade-up" data-delay="2">
-            <div class="plan-name">Connoisseur</div>
-            <div class="plan-price"><sup>$</sup>199</div>
-            <div class="plan-price-period">per month</div>
-            <ul class="plan-features">
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> Everything in Collector</li>
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> Private sale invitations</li>
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> Dedicated art advisor</li>
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> Minimum buyer's premium</li>
-              <li class="plan-feat-item"><span class="plan-feat-check"><svg
-                    class="icon icon-sm icon-margin-r icon-gold">
-                    <use xlink:href="#icon-check"></use>
-                  </svg></span> VIP preview events</li>
-            </ul>
-            <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;">Go Connoisseur</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- S15 — VIDEO HIGHLIGHT -->
-    <section id="s-highlight" class="section">
-      <div class="highlight-bg"></div>
-      <div class="highlight-content">
-        <div class="badge-gold" style="margin-bottom:24px;"><span class="live-dot"></span> Watch the Experience</div>
-        <button class="play-btn" id="play-btn" aria-label="Play video"><svg class="icon"
-            style="fill:currentColor;stroke:none;">
-            <use xlink:href="#icon-play"></use>
-          </svg></button>
-        <h2 class="highlight-title">The Art of the <span style="color:var(--gold)">Gavel</span></h2>
-        <p style="color:rgba(255,255,255,0.55);max-width:500px;margin:16px auto 0;font-size:16px;">Go behind the scenes
-          of a record-breaking evening sale with our award-winning auctioneers.</p>
-      </div>
-    </section>
 
-    <!-- S16 — RECENT RESULTS -->
-    <section id="s-results" class="section" style="background:var(--navy-mid);">
-      <div class="container">
-        <div class="text-center" data-anim="fade-up">
-          <div class="section-tag">Hammer Results</div>
-          <h2 class="section-title">Recent <span class="gold">Sale Results</span></h2>
-        </div>
-        <div class="results-table-wrap" data-anim="fade-up" data-delay="1">
-          <table class="results-table">
-            <thead>
-              <tr>
-                <th>Lot</th>
-                <th>Item</th>
-                <th>Category</th>
-                <th>Estimate</th>
-                <th>Hammer Price</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><img src="images/luxury_watch.png" class="results-lot-img" alt="Watch" /></td>
-                <td>Patek Philippe Grand Complications</td>
-                <td><span class="result-cat">Horology</span></td>
-                <td>$60,000–80,000</td>
-                <td style="color:var(--gold);font-weight:700;font-family:var(--font-serif)">$84,500</td>
-                <td><span class="result-sold"><svg class="icon-sm icon-margin-r">
-                      <use xlink:href="#icon-badge-check"></use>
-                    </svg> Sold</span></td>
-              </tr>
-              <tr>
-                <td><img src="images/fine_art.png" class="results-lot-img" alt="Art" /></td>
-                <td>Impressionist Oil — Garden at Giverny</td>
-                <td><span class="result-cat">Fine Art</span></td>
-                <td>$180,000–220,000</td>
-                <td style="color:var(--gold);font-weight:700;font-family:var(--font-serif)">$218,000</td>
-                <td><span class="result-sold"><svg class="icon-sm icon-margin-r">
-                      <use xlink:href="#icon-badge-check"></use>
-                    </svg> Sold</span></td>
-              </tr>
-              <tr>
-                <td><img src="images/rare_diamond.png" class="results-lot-img" alt="Diamond" /></td>
-                <td>Pink Argyle Diamond Necklace 18ct</td>
-                <td><span class="result-cat">Jewellery</span></td>
-                <td>$400,000–600,000</td>
-                <td style="color:var(--gold);font-weight:700;font-family:var(--font-serif)">$560,000</td>
-                <td><span class="result-sold"><svg class="icon-sm icon-margin-r">
-                      <use xlink:href="#icon-badge-check"></use>
-                    </svg> Sold</span></td>
-              </tr>
-              <tr>
-                <td><img src="images/auction_items.png" class="results-lot-img" alt="Items" /></td>
-                <td>Art Deco Sapphire Brooch</td>
-                <td><span class="result-cat">Jewellery</span></td>
-                <td>$20,000–30,000</td>
-                <td style="color:var(--gold);font-weight:700;font-family:var(--font-serif)">$38,200</td>
-                <td><span class="result-sold"><svg class="icon-sm icon-margin-r">
-                      <use xlink:href="#icon-badge-check"></use>
-                    </svg> Sold</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
 
     <!-- S17 — FAQ -->
     <section id="s-faq" class="section">
@@ -1525,26 +1161,6 @@
       </div>
     </section>
 
-    <!-- S20 — CTA BANNER -->
-    <section id="s-cta">
-      <div class="cta-glow-ring"></div>
-      <div class="cta-glow-ring"></div>
-      <div class="cta-glow-ring"></div>
-      <div class="cta-content">
-        <div class="badge-gold" style="margin-bottom:28px;"><svg class="icon-sm icon-margin-r">
-            <use xlink:href="#icon-bolt"></use>
-          </svg> Join 12,400+ Collectors</div>
-        <h2 class="cta-title">Ready to Discover<br>Your Next <span class="gold">Masterpiece?</span></h2>
-        <p class="cta-sub">Create your free account today and unlock access to thousands of authenticated lots from
-          around the world.</p>
-        <div class="cta-btns">
-          <a href="#" class="btn btn-primary" style="font-size:15px;padding:16px 40px;"><svg class="icon icon-margin-r">
-              <use xlink:href="#icon-bolt"></use>
-            </svg> Start Bidding Free</a>
-          <a href="#s-how" class="btn btn-outline" style="font-size:15px;padding:16px 40px;">How It Works</a>
-        </div>
-      </div>
-    </section>
 
   </main>
 
