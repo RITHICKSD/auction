@@ -87,7 +87,7 @@
     </a>
     <div class="sidebar-footer" style="display: flex; gap: 8px; margin: 0 14px 16px;">
       <button class="sidebar-globe-btn" id="globeBtn" title="Toggle RTL/LTR" style="margin: 0;">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#ic-globe"/></svg>
+        <span class="globe-text">LTR</span>
       </button>
       <button class="sidebar-globe-btn theme-toggle-btn" id="theme-toggle" title="Toggle Theme" style="margin: 0;">
         <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -824,11 +824,24 @@ overlay.addEventListener('click', () => {
 
 // Globe RTL/LTR in sidebar
 const globeBtn = document.getElementById('globeBtn');
+function setDashboardDir(dir) {
+  document.documentElement.dir = dir;
+  document.body.dir = dir;
+  localStorage.setItem('oaw-dir', dir);
+  const textSpan = globeBtn.querySelector('.globe-text');
+  if (textSpan) textSpan.textContent = dir.toUpperCase();
+}
+
 globeBtn.addEventListener('click', () => {
   const isRtl = document.documentElement.dir === 'rtl';
-  document.documentElement.dir = isRtl ? 'ltr' : 'rtl';
-  document.body.dir = isRtl ? 'ltr' : 'rtl';
+  setDashboardDir(isRtl ? 'ltr' : 'rtl');
 });
+
+// Init on load
+(function() {
+  const savedDir = localStorage.getItem('oaw-dir') || 'ltr';
+  setDashboardDir(savedDir);
+})();
 </script>
 </body>
 </html>

@@ -16,12 +16,8 @@
     <div class="auth-container">
       <!-- Globe Toggle -->
       <div class="auth-globe" style="display: flex; gap: 8px;">
-        <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR" title="Toggle RTL/LTR" style="border: 1px solid var(--border); padding: 10px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); background: none; cursor: pointer;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            <path d="M2 12h20"></path>
-          </svg>
+        <button class="globe-btn" id="globe-btn" aria-label="Toggle Direction" title="Switch to RTL" style="border: 1px solid var(--border); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); background: none; cursor: pointer;">
+          <span class="globe-text" style="font-size: 10px; font-weight: 800; letter-spacing: 0.5px;">LTR</span>
         </button>
         <!-- Theme Toggle -->
         <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
@@ -85,12 +81,25 @@
 
   <script>
     const globeBtn = document.getElementById('globe-btn');
+    function setAuthDir(dir) {
+      document.documentElement.dir = dir;
+      document.body.dir = dir;
+      localStorage.setItem('oaw-dir', dir);
+      globeBtn.title = dir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL';
+      const textSpan = globeBtn.querySelector('.globe-text');
+      if (textSpan) textSpan.textContent = dir.toUpperCase();
+    }
+
     globeBtn.addEventListener('click', () => {
       const isRtl = document.documentElement.dir === 'rtl';
-      document.documentElement.dir = isRtl ? 'ltr' : 'rtl';
-      document.body.dir = isRtl ? 'ltr' : 'rtl';
-      globeBtn.title = isRtl ? 'Switch to RTL' : 'Switch to LTR';
+      setAuthDir(isRtl ? 'ltr' : 'rtl');
     });
+
+    // Init on load
+    (function() {
+      const savedDir = localStorage.getItem('oaw-dir') || 'ltr';
+      setAuthDir(savedDir);
+    })();
   </script>
 </body>
 </html>

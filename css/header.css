@@ -186,8 +186,7 @@ body[dir="rtl"] .dropdown-link.active {
   border-radius: 50%;
   border: 1px solid var(--border);
   color: var(--muted);
-  font-size: 18px;
-  transition: all var(--dur-fast) var(--ease), transform 0.3s var(--ease);
+  transition: all var(--dur-fast) var(--ease);
   cursor: pointer;
   background: none;
   position: relative;
@@ -196,6 +195,12 @@ body[dir="rtl"] .dropdown-link.active {
   border-color: var(--gold);
   color: var(--gold);
   background: var(--gold-glow);
+}
+.globe-text {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: inherit;
 }
 
 /* ── CTA button ── */

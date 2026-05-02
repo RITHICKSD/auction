@@ -129,7 +129,7 @@ body[dir="rtl"] .nav-badge {
   width: 40px;
   height: 40px;
   margin: 0 14px 16px;
-  border-radius: 10px;
+  border-radius: 50%;
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   border: 1px solid var(--border);
@@ -141,6 +141,12 @@ body[dir="rtl"] .nav-badge {
   background: var(--gold-glow);
   color: var(--gold);
   border-color: var(--gold);
+}
+
+.sidebar-globe-btn .globe-text {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
 }
 
 /* Sidebar Theme Toggle specific (Icon-only) */

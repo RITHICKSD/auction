@@ -96,7 +96,8 @@
     // Update globe button tooltip & style
     if (globeBtn) {
       globeBtn.title = dir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL';
-      globeBtn.style.transform = dir === 'rtl' ? 'scaleX(-1)' : '';
+      const textSpan = globeBtn.querySelector('.globe-text');
+      if (textSpan) textSpan.textContent = dir.toUpperCase();
     }
     // Sync mobile dir buttons
     mobileLtrBtns.forEach(b => b.classList.toggle('active', dir === 'ltr'));
