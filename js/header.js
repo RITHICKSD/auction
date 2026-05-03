@@ -136,13 +136,7 @@
   }, { passive: true });
   btt && btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* ── Page loader ── */
-  const loader = document.getElementById('page-loader');
-  if (loader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => loader.classList.add('hidden'), 1500);
-    });
-  }
+
 
   /* ── Cursor glow (desktop) ── */
   const cursor = document.getElementById('cursor-glow');

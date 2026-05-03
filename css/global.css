@@ -124,7 +124,7 @@
   color: #64748b;
 }
 
-.light-theme #page-loader { background: var(--navy); }
+
 .light-theme .glass-card { background: rgba(0,0,0,0.03); border-color: var(--border); }
 .light-theme .hero-bg { opacity: 0.05; }
 .light-theme #particle-canvas { opacity: 0.3; }
@@ -458,30 +458,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   z-index: 0;
 }
 
-/* ── Page loader ── */
-#page-loader {
-  position: fixed;
-  inset: 0;
-  background: var(--navy);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 24px;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-#page-loader.hidden { opacity: 0; visibility: hidden; }
-.loader-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: logoPump 0.8s infinite ease-in-out;
-}
-@keyframes logoPump {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.2); opacity: 1; }
-}
+
 
 
 /* ── Back to top ── */
