@@ -14,15 +14,16 @@
   --gold-glow:   rgba(255,255,0,0.25);
 
   --navy:        #000000;
-  --navy-mid:    #080808;
-  --navy-light:  #121212;
-  --navy-card:   #0a0a0a;
+  --navy-mid:    #0a0a0a;
+  --navy-light:  #141414;
+  --navy-card:   #0f0f0f;
+  --navy-alt:    #111111;
 
   --white:       #FFFFFF;
   --off-white:   #F5F0E8;
   --muted:       #8B9CB6;
-  --border:      rgba(255,255,0,0.15);
-  --border-hover:rgba(255,255,0,0.45);
+  --border:      rgba(255,255,0,0.1);
+  --border-hover:rgba(255,255,0,0.3);
 
   /* Typography */
   --font-serif:  'Fraunces', Georgia, serif;
@@ -146,14 +147,15 @@
 .light-theme .h2-hero-bg,
 .light-theme .hero-parallax-img {
   --navy:        #000000 !important;
-  --navy-mid:    #080808 !important;
-  --navy-light:  #121212 !important;
-  --navy-card:   #0a0a0a !important;
+  --navy-mid:    #0a0a0a !important;
+  --navy-light:  #141414 !important;
+  --navy-card:   #0f0f0f !important;
+  --navy-alt:    #111111 !important;
   --white:       #FFFFFF !important;
   --off-white:   #F5F0E8 !important;
   --muted:       #8B9CB6 !important;
-  --border:      rgba(255,255,0,0.15) !important;
-  --border-hover:rgba(255,255,0,0.45) !important;
+  --border:      rgba(255,255,0,0.1) !important;
+  --border-hover:rgba(255,255,0,0.3) !important;
   --gold:        #FFFF00 !important;
   --gold-light:  #FFFF33 !important;
   --gold-dark:   #CCCC00 !important;
@@ -361,21 +363,30 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   transition: all var(--dur-med) var(--ease);
   position: relative;
   overflow: hidden;
+  border: 1px solid transparent;
 }
 .btn-primary {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: var(--navy);
+  background: var(--gold);
+  color: #000000;
+  font-weight: 800;
 }
 .btn-primary::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  background: #000000;
   opacity: 0;
   transition: opacity var(--dur-fast) var(--ease);
+  z-index: 0;
 }
-.btn-primary:hover::before { opacity: 1; }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+.btn-primary span { position: relative; z-index: 1; }
+.btn-primary:hover { 
+  background: #000000;
+  color: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-2px); 
+  box-shadow: 0 0 20px var(--gold-glow); 
+}
 .btn-outline {
   border: 1px solid var(--gold);
   color: var(--gold);

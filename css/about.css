@@ -152,6 +152,7 @@
 body[dir="rtl"] .hero-split { flex-direction: row-reverse; }
 body[dir="rtl"] .hero-split-left { text-align: right; padding: 0 10% 0 5%; }
 body[dir="rtl"] .hero-scroll-hint { flex-direction: row-reverse; }
+body[dir="rtl"] .phil-card { text-align: right; }
 body[dir="rtl"] .tl-item:nth-child(even) { text-align: right; }
 body[dir="rtl"] .tl-item:nth-child(odd) { text-align: left; }
 
