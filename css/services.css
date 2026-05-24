@@ -58,11 +58,14 @@
 .service-detail-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas: "visual text";
   gap: 80px;
   align-items: center;
+  direction: ltr; /* Keep visual on left and text on right by default */
 }
-.service-detail-grid.alt { direction: rtl; }
-body[dir="rtl"] .service-detail-grid.alt { direction: ltr; }
+.service-detail-grid .sd-visual { grid-area: visual; }
+.service-detail-grid .sd-text { grid-area: text; }
+.service-detail-grid.alt { grid-template-areas: "text visual"; }
 
 .sd-visual {
   height: 500px;
@@ -74,6 +77,8 @@ body[dir="rtl"] .service-detail-grid.alt { direction: ltr; }
   justify-content: center;
   position: relative;
 }
+.sd-text { padding-left: 40px; }
+.service-detail-grid.alt .sd-text { padding-left: 0; padding-right: 40px; }
 .glass-box {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(20px);
@@ -159,6 +164,8 @@ body[dir="rtl"] .service-detail-grid.alt { direction: ltr; }
 
 /* RTL Adjustments */
 body[dir="rtl"] .sd-text { text-align: right; }
+body[dir="rtl"] .service-detail-grid { direction: ltr; }
+body[dir="rtl"] .service-detail-grid .sd-text { padding-left: 0; padding-right: 40px; }
 body[dir="rtl"] .check-list li { text-align: right; }
 
 /* Responsive */

@@ -206,7 +206,7 @@ body[dir="rtl"] .dash-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 32px;
+  padding: 28px 32px; /* slightly increased for taller header */
   border-bottom: 1px solid var(--border);
   background: #0a0c14;
   position: sticky;
@@ -229,6 +229,15 @@ body[dir="rtl"] .dash-main {
   display: flex;
   align-items: center;
   gap: 16px;
+  position: absolute;
+  right: 32px; /* pin to visual right */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Small screen tweak */
+@media (max-width: 900px) {
+  .dash-actions { right: 16px; }
 }
 
 .globe-btn {
@@ -1087,8 +1096,8 @@ body[dir="rtl"] .tl-entry:not(:last-child)::before {
   }
 
   .dash-header {
-    padding: 12px 16px;
-    padding-left: 60px;
+    padding: 16px 16px;
+    padding-left: 60px; /* space for mobile sidebar toggle */
     width: 100%;
   }
 
@@ -1111,6 +1120,21 @@ body[dir="rtl"] .tl-entry:not(:last-child)::before {
   .panel-title {
     font-size: 22px;
   }
+}
+
+/* Mobile: center header actions and avoid touching corners */
+@media (max-width: 480px) {
+  /* Increase vertical padding to make header taller on small screens */
+  .dash-header { padding: 20px 16px; padding-left: 56px; padding-right: 16px; }
+  .dash-actions {
+    position: absolute;
+    left: 50%;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    gap: 12px;
+  }
+  .globe-btn, .theme-toggle-btn, .user-avatar { width: 36px; height: 36px; }
 }
 
 @media (max-width: 640px) {
@@ -1197,4 +1221,20 @@ body[dir="rtl"] .tl-entry:not(:last-child)::before {
     padding: 10px 8px;
     font-size: 11px;
   }
+}
+
+/* Extra small screens: tighten header spacing and controls to avoid layout breaks at ~360px */
+@media (max-width: 380px) {
+  .dash-header {
+    padding-left: 48px;
+    padding-right: 16px;
+  }
+  body[dir="rtl"] .dash-header {
+    padding-left: 16px;
+    padding-right: 48px;
+  }
+  .dash-welcome h2 { font-size: 18px; }
+  .dash-actions { gap: 8px; }
+  .globe-btn { width: 32px; height: 32px; }
+  .user-avatar { width: 36px; height: 36px; font-size: 12px; }
 }
